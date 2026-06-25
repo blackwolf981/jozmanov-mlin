@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zgodovinski Jožmanov mlin — investicijska priložnost ob reki Krki</title>
+<meta name="description" content="Na prodaj zgodovinski Jožmanov mlin z zemljišči ob reki Krki, cca. 15.000 m², 6 objektov. Edinstvena investicijska priložnost za turizem na Dolenjskem.">
+<style>
+:root{
+  --stone:#b9a489; --stone-d:#8a7559; --ink:#2b2a26; --paper:#f7f4ee;
+  --river:#2f5d6b; --river-d:#234753; --green:#5a6e4f; --line:#e2dccf;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Helvetica Neue",Arial,sans-serif;color:var(--ink);background:var(--paper);line-height:1.65;font-size:17px}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:600;line-height:1.18;letter-spacing:.2px}
+h2{font-size:2rem;color:var(--river-d);margin-bottom:.2em}
+h3{font-size:1.25rem;color:var(--stone-d);margin-bottom:.3em}
+p{margin-bottom:1em}
+a{color:var(--river)}
+.en{display:none}
+html[lang="en"] .sl{display:none}
+html[lang="en"] .en{display:inline}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+section{padding:72px 0}
+section:nth-of-type(even){background:#fff}
+.eyebrow{text-transform:uppercase;letter-spacing:3px;font-size:.78rem;color:var(--stone-d);font-weight:700;margin-bottom:.6em}
+.lead{font-size:1.15rem;color:#4a4840;max-width:760px}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;
+  padding:12px 24px;background:rgba(247,244,238,0);transition:.3s}
+nav.scrolled{background:rgba(247,244,238,.96);box-shadow:0 2px 18px rgba(0,0,0,.07)}
+nav .brand{font-family:Georgia,serif;font-weight:600;font-size:1.05rem;color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.5);transition:.3s}
+nav.scrolled .brand{color:var(--river-d);text-shadow:none}
+.lang-toggle{display:flex;gap:2px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.5);border-radius:30px;overflow:hidden}
+nav.scrolled .lang-toggle{background:#fff;border-color:var(--line)}
+.lang-toggle button{border:0;background:transparent;color:#fff;padding:6px 14px;cursor:pointer;font-weight:700;font-size:.8rem;letter-spacing:1px}
+nav.scrolled .lang-toggle button{color:var(--stone-d)}
+.lang-toggle button.active{background:var(--river);color:#fff}
+
+.hero{height:100vh;min-height:560px;position:relative;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;padding:0 24px}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,.15) 40%,rgba(0,0,0,.55));z-index:1}
+.hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero .inner{position:relative;z-index:2;max-width:880px}
+.hero h1{font-size:clamp(2.2rem,6vw,4.2rem);color:#fff;text-shadow:0 2px 24px rgba(0,0,0,.45);margin-bottom:.25em}
+.hero .sub{font-size:clamp(1.05rem,2.4vw,1.5rem);font-weight:300;text-shadow:0 1px 12px rgba(0,0,0,.5);margin-bottom:1.6em}
+.btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-block;padding:14px 28px;border-radius:32px;font-weight:700;text-decoration:none;font-size:.95rem;letter-spacing:.5px;transition:.2s;cursor:pointer}
+.btn-primary{background:var(--river);color:#fff}
+.btn-primary:hover{background:var(--river-d)}
+.btn-ghost{background:rgba(255,255,255,.12);color:#fff;border:1.5px solid #fff}
+.btn-ghost:hover{background:#fff;color:var(--river-d)}
+.scroll-cue{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:2;color:#fff;font-size:1.6rem;text-decoration:none;animation:bob 2s infinite}
+@keyframes bob{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,8px)}}
+
+.facts{background:var(--river-d);color:#fff}
+.facts .grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;text-align:center}
+.fact .num{font-family:Georgia,serif;font-size:2.1rem;color:#fff;line-height:1}
+.fact .lbl{font-size:.82rem;opacity:.82;margin-top:.5em;letter-spacing:.5px}
+
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.cols img{width:100%;border-radius:8px;box-shadow:0 12px 40px rgba(0,0,0,.14)}
+ul.clean{list-style:none;margin:.5em 0 1em}
+ul.clean li{padding-left:1.5em;position:relative;margin-bottom:.4em}
+ul.clean li::before{content:"›";position:absolute;left:0;color:var(--river);font-weight:700;font-size:1.1em}
+
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:34px}
+.card{background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden;box-shadow:0 6px 22px rgba(0,0,0,.05)}
+section:nth-of-type(even) .card{background:var(--paper)}
+.card img{width:100%;height:210px;object-fit:cover;display:block}
+.card .c-body{padding:18px 20px}
+.card .dim{display:inline-block;background:var(--stone);color:#fff;font-size:.74rem;font-weight:700;padding:3px 10px;border-radius:20px;margin-bottom:8px;letter-spacing:.5px}
+.card p{font-size:.93rem;margin-bottom:0;color:#56534b}
+
+.pot{display:grid;grid-template-columns:repeat(2,1fr);gap:26px;margin-top:30px}
+.pot .box{background:#fff;border-left:4px solid var(--green);padding:22px 26px;border-radius:0 8px 8px 0;box-shadow:0 6px 22px rgba(0,0,0,.05)}
+section:nth-of-type(even) .pot .box{background:var(--paper)}
+.pot .box h3{color:var(--green)}
+.pot .box p{font-size:.95rem;margin-bottom:0;color:#56534b}
+
+.band{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:30px}
+.band img{width:100%;height:200px;object-fit:cover;border-radius:6px;cursor:pointer;transition:.25s}
+.band img:hover{transform:scale(1.02);filter:brightness(1.05)}
+.band .tall{grid-row:span 2;height:410px}
+
+.videos{display:grid;grid-template-columns:2fr 1fr;gap:14px;margin-top:14px}
+.videos video{width:100%;border-radius:8px;background:#000;box-shadow:0 10px 30px rgba(0,0,0,.12)}
+.videos .land{aspect-ratio:16/9;object-fit:cover}
+.videos .vert{aspect-ratio:9/16;object-fit:cover;max-height:520px;justify-self:center}
+
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:30px}
+.g-item{overflow:hidden;border-radius:6px;cursor:pointer}
+.g-item img{width:100%;height:170px;object-fit:cover;display:block;transition:.3s}
+.g-item:hover img{transform:scale(1.06)}
+
+#lightbox{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:100;display:none;align-items:center;justify-content:center;cursor:zoom-out}
+#lightbox img{max-width:92%;max-height:90%;border-radius:4px;box-shadow:0 0 60px rgba(0,0,0,.6)}
+
+.contact{background:var(--river-d);color:#fff;text-align:center}
+.contact h2{color:#fff}
+.contact .lead{margin:0 auto 1.6em;color:rgba(255,255,255,.9)}
+.cinfo{font-size:1.15rem;line-height:2}
+.cinfo a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.4)}
+.note{font-size:.85rem;opacity:.7;margin-top:2em}
+
+footer{background:var(--ink);color:rgba(255,255,255,.6);text-align:center;padding:26px;font-size:.82rem}
+
+@media(max-width:860px){
+  .facts .grid{grid-template-columns:repeat(2,1fr);gap:24px 8px}
+  .cols{grid-template-columns:1fr;gap:24px}
+  .cards,.pot,.videos{grid-template-columns:1fr}
+  .band,.gal{grid-template-columns:repeat(2,1fr)}
+  .band .tall{grid-row:span 1;height:200px}
+  section{padding:54px 0}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="brand">Jožmanov mlin</div>
+  <div class="lang-toggle">
+    <button id="b-sl" class="active" onclick="setLang('sl')">SL</button>
+    <button id="b-en" onclick="setLang('en')">EN</button>
+  </div>
+</nav>
+
+<header class="hero">
+  <img class="bg" src="./assets/img/Mlin_01.jpg" alt="Jožmanov mlin">
+  <div class="inner">
+    <div class="eyebrow" style="color:#fff;opacity:.9"><span class="sl">Na prodaj • Dolenjska, Slovenija</span><span class="en">For sale • Dolenjska, Slovenia</span></div>
+    <h1><span class="sl">Zgodovinski Jožmanov mlin</span><span class="en">The Historic Jožman Mill</span></h1>
+    <p class="sub"><span class="sl">Edinstvena investicijska priložnost v idilični naravi doline reke Krke</span><span class="en">A unique investment opportunity in the idyllic Krka river valley</span></p>
+    <div class="btns">
+      <a class="btn btn-primary" href="#kontakt"><span class="sl">Dogovorite si ogled</span><span class="en">Arrange a viewing</span></a>
+      <a class="btn btn-ghost" href="#posest"><span class="sl">Spoznajte posest</span><span class="en">Explore the estate</span></a>
+    </div>
+  </div>
+  <a href="#kratko" class="scroll-cue">⌄</a>
+</header>
+
+<section class="facts" id="kratko">
+  <div class="wrap">
+    <div class="grid">
+      <div class="fact"><div class="num">~15.000</div><div class="lbl">m² <span class="sl">zemljišč</span><span class="en">of land</span></div></div>
+      <div class="fact"><div class="num">6</div><div class="lbl"><span class="sl">objektov (~413 m²)</span><span class="en">buildings (~413 m²)</span></div></div>
+      <div class="fact"><div class="num">8</div><div class="lbl"><span class="sl">parcel (3 zazidljive)</span><span class="en">plots (3 buildable)</span></div></div>
+      <div class="fact"><div class="num">30 min</div><div class="lbl"><span class="sl">od Ljubljane</span><span class="en">from Ljubljana</span></div></div>
+      <div class="fact"><div class="num">18.</div><div class="lbl"><span class="sl">stoletje (1824)</span><span class="en">century (1824)</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="lokacija">
+  <div class="wrap">
+    <div class="eyebrow"><span class="sl">Lokacija</span><span class="en">Location</span></div>
+    <div class="cols">
+      <div>
+        <h2><span class="sl">Le streljaj iz Ljubljane</span><span class="en">A stone’s throw from Ljubljana</span></h2>
+        <p class="lead"><span class="sl">V dolini reke Krke, 15 km od njenega izvira, v Drašči vasi (k.o. Šmihel pri Žužemberku). Le 30 minut oz. 36 km od ljubljanske obvoznice.</span><span class="en">In the Krka river valley, 15 km from its source, in the village of Drašča vas. Just 30 minutes / 36 km from the Ljubljana ring road.</span></p>
+        <ul class="clean">
+          <li><span class="sl">Posestvo je umaknjeno od naselij, <b>brez neposrednih sosedov</b> — izjemna zasebnost in mir.</span><span class="en">The estate is set away from settlements, <b>with no direct neighbours</b> — exceptional privacy and peace.</span></li>
+          <li><span class="sl">Naslov: Drašča vas 26, 1303 Zagradec, občina Žužemberk.</span><span class="en">Address: Drašča vas 26, 1303 Zagradec, Žužemberk municipality.</span></li>
+          <li><span class="sl">V bližini: grad Žužemberk in Železolivarski muzej na Dvoru.</span><span class="en">Nearby: Žužemberk Castle and the Ironworks Museum in Dvor.</span></li>
+        </ul>
+        <a class="btn btn-primary" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Dra%C5%A1%C4%8Da+vas+26+Zagradec"><span class="sl">Odpri na zemljevidu</span><span class="en">Open in maps</span></a>
+      </div>
+      <div><img src="./assets/img/Loka_01.jpg" alt="<span class="sl">Loka ob reki Krki</span><span class="en">Meadow by the Krka river</span>"></div>
+    </div>
+  </div>
+</section>
+
+<section id="posest">
+  <div class="wrap">
+    <div class="eyebrow"><span class="sl">Posest in objekti</span><span class="en">The estate &amp; buildings</span></div>
+    <h2><span class="sl">Redko ohranjena zgodovinska celota ob reki</span><span class="en">A rare, intact historic ensemble by the river</span></h2>
+    <p class="lead"><span class="sl">Ekskluzivna posest cca. 15.000 m² na osmih parcelah, od katerih so tri zazidljive (območje centralnih dejavnosti). Na njej stoji šest objektov v skupni bruto površini cca. 413 m².</span><span class="en">An exclusive estate of approx. 15,000 m² across eight plots, three of which are buildable (central-activities zone). It comprises six buildings with a total gross area of approx. 413 m².</span></p>
+    <div class="cards">
+      <div class="card">
+        <img src="./assets/img/Mlin_05.jpg" alt="Jožmanov mlin">
+        <div class="c-body">
+          <span class="dim">126,75 m² · 19,5 × 6,5 m</span>
+          <h3><span class="sl">Jožmanov mlin</span><span class="en">The Jožman Mill</span></h3>
+          <p><span class="sl">Stavba št. 455, kulturni spomenik lokalnega pomena, z dodeljeno hišno številko. Eden najstarejših mlinov na Krki, nekoč naseljen.</span><span class="en">Building no. 455, a local heritage monument with an assigned house number. One of the oldest mills on the Krka, once inhabited.</span></p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="./assets/img/Hlev_mali_na_loki_01.jpg" alt="<span class="sl">Kamniti objekt na loki</span><span class="en">Stone building on the meadow</span>">
+        <div class="c-body">
+          <span class="dim">56 m² · 14 × 4 m</span>
+          <h3><span class="sl">Kamniti objekt na loki</span><span class="en">Stone building on the meadow</span></h3>
+          <p><span class="sl">Objekt št. 179 neposredno ob reki, vrisan že v katastru 1825. Nekdanje gospodarsko poslopje — priložnost za rekonstrukcijo.</span><span class="en">Building no. 179 right by the river, mapped already in 1825. A former farm building — an opportunity for reconstruction.</span></p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="./assets/img/Dvorisce_mlin_kozolec.kasca_01.jpg" alt="<span class="sl">Niz gospodarskih objektov</span><span class="en">Row of farm buildings</span>">
+        <div class="c-body">
+          <span class="dim">231 m² · 38,5 × 6 m</span>
+          <h3><span class="sl">Niz štirih objektov</span><span class="en">Row of four buildings</span></h3>
+          <p><span class="sl">Nasproti mlina: kozolec, stara kamnita klet (vklesana v skalo — idealna za vinsko klet), kašča in skedenj z atrijem.</span><span class="en">Opposite the mill: a hayrack, an old stone cellar (carved into rock — ideal for a wine cellar), a granary and a barn with an atrium.</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pravno">
+  <div class="wrap">
+    <div class="eyebrow"><span class="sl">Pravni okvir in gradbene možnosti</span><span class="en">Legal framework &amp; building options</span></div>
+    <div class="cols">
+      <div><img src="./assets/img/Mlin_notranjost_02.jpg" alt="<span class="sl">Notranjost mlina</span><span class="en">Mill interior</span>"></div>
+      <div>
+        <h2><span class="sl">Potrjena vizija obnove</span><span class="en">An approved vision for renewal</span></h2>
+        <p class="lead"><span class="sl">Na podlagi usklajevanja z Zavodom za varstvo kulturne dediščine (OE Novo mesto, 20. 5. 2025) je potrjena vizija razvoja posestva.</span><span class="en">Following coordination with the Institute for the Protection of Cultural Heritage (Novo mesto unit, 20 May 2025), a development vision for the estate has been confirmed.</span></p>
+        <ul class="clean">
+          <li><span class="sl">Tri parcele so <b>zazidljive</b> (CD — druga območja centralnih dejavnosti): dopusten turizem, gostinstvo, kultura, storitve.</span><span class="en">Three plots are <b>buildable</b> (central-activities zone): tourism, hospitality, culture and services are permitted.</span></li>
+          <li><span class="sl">Mlin se sme preurediti v <b>butični hotel ali interpretacijski center</b>, z uporabo sodobnih metod ob ohranitvi videza.</span><span class="en">The mill may be converted into a <b>boutique hotel or interpretation centre</b>, using modern methods while preserving its appearance.</span></li>
+          <li><span class="sl">Za objekte brez spomeniškega statusa je <b>odobrena odstranitev in novogradnja</b> v enakih gabaritih.</span><span class="en">For non-protected buildings, <b>demolition and new construction</b> within the same dimensions is approved.</span></li>
+          <li><span class="sl">Stara kamnita klet je idealna za <b>vinsko klet</b>.</span><span class="en">The old stone cellar is ideal for a <b>wine cellar</b>.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="narava">
+  <div class="wrap">
+    <div class="eyebrow"><span class="sl">Narava in doživetja</span><span class="en">Nature &amp; experiences</span></div>
+    <h2><span class="sl">Reka Krka pred pragom</span><span class="en">The Krka river at your doorstep</span></h2>
+    <p class="lead"><span class="sl">Neposredna bližina reke odpira širok spekter doživetij: naravno kopališče ob slapu in jezu, kajak in kanu, ribolov, pohodništvo in kolesarjenje po Suhi krajini.</span><span class="en">The river right at hand opens a wide range of experiences: a natural bathing spot by the waterfall and weir, kayaking and canoeing, fishing, hiking and cycling across the Suha krajina region.</span></p>
+    <div class="videos">
+      <video class="land" controls preload="none" poster="./assets/video/reka_jez_poster.jpg">
+        <source src="./assets/video/reka_jez.mp4" type="video/mp4">
+      </video>
+      <video class="vert" controls preload="none" poster="./assets/video/slap_vertikalno_poster.jpg">
+        <source src="./assets/video/slap_vertikalno.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="band">
+      <img class="tall" src="./assets/img/Slap_13.jpg" onclick="lb(this)" alt="<span class="sl">Slap na Krki</span><span class="en">Waterfall on the Krka</span>">
+      <img src="./assets/img/Kopalisce_nad_slapom_03.jpg" onclick="lb(this)" alt="<span class="sl">Naravno kopališče</span><span class="en">Natural bathing spot</span>">
+      <img src="./assets/img/Kopalisce_pod_slapom_02.jpg" onclick="lb(this)" alt="<span class="sl">Tolmun pod slapom</span><span class="en">Pool below the waterfall</span>">
+      <img src="./assets/img/Jez_ob_mlinu_01.jpg" onclick="lb(this)" alt="<span class="sl">Jez ob mlinu</span><span class="en">Weir by the mill</span>">
+      <img src="./assets/img/Mosticek_cez_jez.jpg" onclick="lb(this)" alt="<span class="sl">Mostiček čez jez</span><span class="en">Footbridge over the weir</span>">
+      <img src="./assets/img/Polotok_ob_jezu_01.jpg" onclick="lb(this)" alt="<span class="sl">Polotok ob jezu</span><span class="en">Peninsula by the weir</span>">
+      <img src="./assets/img/Slap_05.jpg" onclick="lb(this)" alt="<span class="sl">Slap</span><span class="en">Waterfall</span>">
+    </div>
+    <div class="pot" style="margin-top:14px">
+      <div class="box">
+        <h3><span class="sl">Rivčja jama</span><span class="en">The Rivčja cave</span></h3>
+        <p><span class="sl">Naravni kraški pojav v neposredni bližini mlina — izhodišče za vodena doživetja in interpretacijo naravne dediščine.</span><span class="en">A natural karst cave in the immediate vicinity of the mill — a basis for guided experiences and nature interpretation.</span></p>
+      </div>
+      <div class="box">
+        <h3><span class="sl">Doživljajski in kulinarični turizem</span><span class="en">Experiential &amp; culinary tourism</span></h3>
+        <p><span class="sl">Možnost oživitve mletja žita ter razvoja kulinaričnih in izobraževalnih delavnic z lokalnimi ponudniki.</span><span class="en">The potential to revive grain milling and to develop culinary and educational workshops with local producers.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="zgodovina">
+  <div class="wrap">
+    <div class="eyebrow"><span class="sl">Zgodovina in dediščina</span><span class="en">History &amp; heritage</span></div>
+    <div class="cols">
+      <div>
+        <h2><span class="sl">Sedem vodnih koles</span><span class="en">Seven water wheels</span></h2>
+        <p><span class="sl">Jožmanov mlin izvira iz 18. stoletja in je omenjen že v Franciscejskem katastru leta 1824. Njegova posebnost je bila tehnično napredna zasnova s kar sedmimi podlivnimi vodnimi kolesi — skoraj industrijska stopnja obdelave žita za tisti čas.</span><span class="en">The Jožman Mill dates from the 18th century and is recorded in the Franciscean cadastre of 1824. Its distinguishing feature was an advanced design with as many as seven undershot water wheels — an almost industrial scale of grain processing for its time.</span></p>
+        <p><span class="sl">Skupaj s kamnito kaščo, vklesano v živo skalo, jezom in mostom tvori redko ohranjeno celoto, kjer se prepletajo tehnična dediščina, tradicionalna arhitektura in naravna krajina.</span><span class="en">Together with the stone granary carved into living rock, the weir and the bridge, it forms a rare, intact ensemble where technical heritage, traditional architecture and natural landscape intertwine.</span></p>
+      </div>
+      <div><img src="./assets/img/Mlin_notranjost_03.jpg" alt="<span class="sl">Mlinsko postrojenje</span><span class="en">Milling mechanism</span>"></div>
+    </div>
+  </div>
+</section>
+
+<section id="infra">
+  <div class="wrap">
+    <div class="eyebrow"><span class="sl">Dostop in infrastruktura</span><span class="en">Access &amp; infrastructure</span></div>
+    <div class="pot">
+      <div class="box"><h3><span class="sl">Dostop</span><span class="en">Access</span></h3><p><span class="sl">Urejen dostop po lastniški parceli (kolovozna pot z možnostjo ureditve ceste). Lastniško zemljišče omogoča tudi nadzor in zapiranje dostopa po potrebi.</span><span class="en">Access along an owned plot (a cart track that can be upgraded to a road). Ownership of the land also allows controlling or closing access when needed.</span></p></div>
+      <div class="box"><h3><span class="sl">Komunalna infrastruktura</span><span class="en">Utilities</span></h3><p><span class="sl">Na posestvu ali v neposredni bližini so že zagotovljeni priključki za vodovod, elektriko in optični internet.</span><span class="en">Connections for water, electricity and fibre internet are already available on or right beside the estate.</span></p></div>
+    </div>
+  </div>
+</section>
+
+<section id="galerija">
+  <div class="wrap">
+    <div class="eyebrow"><span class="sl">Galerija</span><span class="en">Gallery</span></div>
+    <h2><span class="sl">Posestvo v slikah</span><span class="en">The estate in pictures</span></h2>
+    <div class="gal">
+      <figure class="g-item" onclick="lb(this)"><img loading="lazy" src="./assets/img/Mlin_01.jpg" alt="Mlin 01"></figure>
+<figure class="g-item" onclick="lb(this)"><img loading="lazy" src="./assets/img/Mlin_05.jpg" alt="Mlin 05"></figure>
+<figure class="g-item" onclick="lb(this)"><img loading="lazy" src="./assets/img/Mlin_08.jpg" alt="Mlin 08"></figure>
+<figure class="g-item" onclick="lb(this)"><img loading="lazy" src="./assets/img/Mlin_09.jpg" alt="Mlin 09"></figure>
+<figure class="g-item" onclick="lb(this)"><img loading="lazy" src="./assets/img/Mlin_13.jpg" alt="Mlin 13"></figure>
+<figure class="g-item" onclick="lb(this)"><img loading="lazy" src="./assets/img/Mlin_notranjost_01.jpg" alt="Mlin notranjost 01"></figure>
+<figure class="g-item" onclick="lb(this)"><img loading="lazy" src="./assets/img/Mlin_notranjost_03.jpg" alt="Mlin notranjost 03"></figure>
+<figure class="g-item" onclick="lb(this)"><img loading="lazy" src="./assets/img/Mlin_zapornica.jpg" alt="Mlin zapornica"></figure>
+<figure class="g-item" onclick="lb(this)"><img loading="lazy" src="./assets/img/Kasca_01.jpg" alt="Kasca 01"></figure>
+<figure class="g-item" onclick="lb(this)"><img loading="lazy" src="./assets/img/Kasca_klet_laterna_kozolec.jpg" alt="Kasca klet laterna kozolec"></figure>
+<figure class="g-item" onclick="lb(this)"><img loading="lazy" src="./assets/img/Dvorisce_mlin_kozolec.kasca_01.jpg" alt="Dvorisce mlin kozolec.kasca 01"></figure>
+<figure class="g-item" onclick="lb(this)"><img loading="lazy" src="./assets/img/Hlev_mali_na_loki_01.jpg" alt="Hlev mali na loki 01"></figure>
+<figure class="g-item" onclick="lb(this)"><img loading="lazy" src="./assets/img/Loka_01.jpg" alt="Loka 01"></figure>
+<figure class="g-item" onclick="lb(this)"><img loading="lazy" src="./assets/img/Loka_04.jpg" alt="Loka 04"></figure>
+<figure class="g-item" onclick="lb(this)"><img loading="lazy" src="./assets/img/Jez_ob_mlinu_01.jpg" alt="Jez ob mlinu 01"></figure>
+<figure class="g-item" onclick="lb(this)"><img loading="lazy" src="./assets/img/Mosticek_cez_jez.jpg" alt="Mosticek cez jez"></figure>
+<figure class="g-item" onclick="lb(this)"><img loading="lazy" src="./assets/img/Polotok_ob_jezu_01.jpg" alt="Polotok ob jezu 01"></figure>
+<figure class="g-item" onclick="lb(this)"><img loading="lazy" src="./assets/img/Slap_05.jpg" alt="Slap 05"></figure>
+<figure class="g-item" onclick="lb(this)"><img loading="lazy" src="./assets/img/Slap_13.jpg" alt="Slap 13"></figure>
+<figure class="g-item" onclick="lb(this)"><img loading="lazy" src="./assets/img/Slap_16.jpg" alt="Slap 16"></figure>
+<figure class="g-item" onclick="lb(this)"><img loading="lazy" src="./assets/img/Kopalisce_nad_slapom_03.jpg" alt="Kopalisce nad slapom 03"></figure>
+<figure class="g-item" onclick="lb(this)"><img loading="lazy" src="./assets/img/Kopalisce_pod_slapom_02.jpg" alt="Kopalisce pod slapom 02"></figure>
+<figure class="g-item" onclick="lb(this)"><img loading="lazy" src="./assets/img/Kopalisce_pod_slapom_04.jpg" alt="Kopalisce pod slapom 04"></figure>
+<figure class="g-item" onclick="lb(this)"><img loading="lazy" src="./assets/img/Rivcja_jama_pogled_na_vhod_01.jpg" alt="Rivcja jama pogled na vhod 01"></figure>
+<figure class="g-item" onclick="lb(this)"><img loading="lazy" src="./assets/img/Rivcja_jama_strop_kapniki.jpg" alt="Rivcja jama strop kapniki"></figure>
+<figure class="g-item" onclick="lb(this)"><img loading="lazy" src="./assets/img/Rivcja_jama_pogled_ven_1.jpg" alt="Rivcja jama pogled ven 1"></figure>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="kontakt">
+  <div class="wrap">
+    <div class="eyebrow" style="color:#fff;opacity:.8"><span class="sl">Kontakt</span><span class="en">Contact</span></div>
+    <h2><span class="sl">Dogovorite si ogled</span><span class="en">Arrange a viewing</span></h2>
+    <p class="lead"><span class="sl">Posestvo se prodaja v enem kosu. Za podrobnejše informacije, dokumentacijo in ogled (najlepše poleti, ko reka Krka pokaže svoj polni čar) me kontaktirajte.</span><span class="en">The estate is sold as a single lot. For detailed information, documentation and a viewing — ideally in summer, when the Krka river shows its full charm — please get in touch.</span></p>
+    <div class="cinfo">
+      <strong>Andrej Ivanec</strong><br>
+      <a href="tel:+38640820245">+386 (0)40 820 245</a><br>
+      <a href="mailto:andrej.ivanec@gmail.com">andrej.ivanec@gmail.com</a>
+    </div>
+    <p class="note"><span class="sl">Cena na povpraševanje. Vse navedbe so informativne narave.</span><span class="en">Price on request. All information is indicative.</span></p>
+  </div>
+</section>
+
+<footer>
+  © 2026 — <span class="sl">Zgodovinski Jožmanov mlin, Drašča vas 26, Slovenija</span><span class="en">The Historic Jožman Mill, Drašča vas 26, Slovenia</span>
+</footer>
+
+<div id="lightbox" onclick="this.style.display='none'"><img src="" alt=""></div>
+
+<script>
+function setLang(l){
+  document.documentElement.lang=l;
+  document.getElementById('b-sl').classList.toggle('active',l==='sl');
+  document.getElementById('b-en').classList.toggle('active',l==='en');
+}
+var nav=document.getElementById('nav');
+window.addEventListener('scroll',function(){
+  nav.classList.toggle('scrolled',window.scrollY>60);
+});
+function lb(el){
+  var img=el.tagName==='IMG'?el:el.querySelector('img');
+  var box=document.getElementById('lightbox');
+  box.querySelector('img').src=img.src; box.style.display='flex';
+}
+</script>
+</body>
+</html>
