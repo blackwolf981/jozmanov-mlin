@@ -128,6 +128,11 @@ section:nth-of-type(even) .pot .box{background:var(--paper)}
 .zoomable:hover .cta{padding-bottom:18px}
 .zoomable .cta svg{width:20px;height:20px;flex:none}
 .map-frame{aspect-ratio:3/2}
+.parcele-frame{aspect-ratio:1400/480;margin-top:18px}
+.parcele-list{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 4px}
+.pno{font-family:"Courier New",monospace;font-size:.88rem;font-weight:700;color:var(--river-d);
+  background:#fff;border:1px solid var(--line);border-radius:6px;padding:5px 11px}
+.subhead{margin-top:1.6em}
 
 #lightbox{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:100;display:none;align-items:center;justify-content:center;cursor:zoom-out}
 #lightbox img{max-width:92%;max-height:90%;border-radius:4px;box-shadow:0 0 60px rgba(0,0,0,.6)}
@@ -283,31 +288,58 @@ footer{background:var(--ink);color:rgba(255,255,255,.6);text-align:center;paddin
 <section id="posest">
   <div class="wrap">
     <div class="eyebrow"><span class="sl">Posest in objekti</span><span class="en">The estate &amp; buildings</span></div>
-    <h2><span class="sl">Redko ohranjena zgodovinska celota ob reki</span><span class="en">A rare, intact historic ensemble by the river</span></h2>
-    <p class="lead"><span class="sl">Ekskluzivna posest cca. 15.000 m² na osmih parcelah, od katerih so tri zazidljive (območje centralnih dejavnosti). Na njej stoji šest objektov v skupni bruto površini cca. 413 m².</span><span class="en">An exclusive estate of approx. 15,000 m² across eight plots, three of which are buildable (central-activities zone). It comprises six buildings with a total gross area of approx. 413 m².</span></p>
+    <h2><span class="sl">Posest (parcele) in objekti na posesti</span><span class="en">The estate (plots) &amp; its buildings</span></h2>
+    <p class="lead"><span class="sl">Celotna posest meri cca. 15.000 m² in se razprostira na osmih parcelah, od katerih so 3 zazidljive oz. v območju centralnih dejavnosti (CD).</span><span class="en">The entire estate measures approx. 15,000 m² and spans eight plots, three of which are buildable (within the central-activities zone, CD).</span></p>
+
+    <h3 class="subhead"><span class="sl">Zemljiške parcele <span style="color:var(--stone-d);font-weight:400">(prodaja v enem kosu)</span></span><span class="en">Land plots <span style="color:var(--stone-d);font-weight:400">(sold as one lot)</span></span></h3>
+    <div class="parcele-list">
+      <span class="pno">2661/1 (del)</span><span class="pno">2662 (del)</span><span class="pno">2663</span><span class="pno">3441</span><span class="pno">3442</span><span class="pno">2639</span><span class="pno">2640/5</span><span class="pno">2640/6</span>
+    </div>
+
+    <a class="zoomable parcele-frame" data-full="./assets/img/Parcele_full.jpg" onclick="lb(this)">
+      <img src="./assets/img/Parcele_thumb.jpg" alt="Načrt parcel posesti / Cadastral plan of the estate plots">
+      <span class="cta">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+        <span class="sl">Povečaj načrt parcel</span><span class="en">Enlarge the plot plan</span>
+      </span>
+    </a>
+
+    <div class="pot" style="margin-top:24px">
+      <div class="box">
+        <h3><span class="sl">Parcele 2663, 3441, 3442</span><span class="en">Plots 2663, 3441, 3442</span></h3>
+        <p><span class="sl"><b>Stavbna zemljišča — druga območja centralnih dejavnosti (CD).</b> Dopustne rabe: turizem, gostinstvo, kulturne vsebine, storitve, interpretacijski centri in kulturne dejavnosti. Možna je gradnja novih objektov, rekonstrukcija obstoječih in sprememba namembnosti.</span><span class="en"><b>Building land — other central-activities areas (CD).</b> Permitted uses: tourism, hospitality, cultural content, services, interpretation centres and cultural activities. New construction, reconstruction of existing buildings and change of use are all possible.</span></p>
+      </div>
+      <div class="box">
+        <h3><span class="sl">Parcele 2640/5, 2640/6, 2639, 2661/1 (del), 2662 (del)</span><span class="en">Plots 2640/5, 2640/6, 2639, 2661/1 (part), 2662 (part)</span></h3>
+        <p><span class="sl">Gozdna in kmetijska zemljišča — gozdna (G) in druga kmetijska (K2) zemljišča.</span><span class="en">Forest and agricultural land — forest (G) and other agricultural (K2) land.</span></p>
+      </div>
+    </div>
+
+    <h3 class="subhead"><span class="sl">Objekti na posestvu</span><span class="en">Buildings on the estate</span></h3>
+    <p class="lead"><span class="sl">Na posestvu stoji Jožmanov mlin in pripadajoča kmetijska poslopja — skupaj 6 objektov v skupni bruto površini cca. 413 m²: mlin, kamniti objekt na loki, kozolec, kamnita klet, kašča in skedenj.</span><span class="en">The estate holds the Jožman Mill and its accompanying farm buildings — six buildings in total with a combined gross area of approx. 413 m²: the mill, the stone building on the meadow, a hayrack, a stone cellar, a granary and a barn.</span></p>
     <div class="cards">
       <div class="card">
         <img src="./assets/img/Mlin_05.jpg" alt="Jožmanov mlin">
         <div class="c-body">
           <span class="dim">126,75 m² · 19,5 × 6,5 m</span>
           <h3><span class="sl">Jožmanov mlin</span><span class="en">The Jožman Mill</span></h3>
-          <p><span class="sl">Stavba št. 455, kulturni spomenik lokalnega pomena, z dodeljeno hišno številko. Eden najstarejših mlinov na Krki, nekoč naseljen.</span><span class="en">Building no. 455, a local heritage monument with an assigned house number. One of the oldest mills on the Krka, once inhabited.</span></p>
+          <p><span class="sl">Stavba št. 455 na parceli 3442, evidentirana v registru prostorskih enot, z naslovom in hišno številko <b>Drašča vas 26</b>. Objekt je bil v preteklosti naseljen, kar olajša priklop na infrastrukturo (voda, elektrika, optika), prijavo bivališča ali turistične dejavnosti ter legalizacijo in spremembo namembnosti.</span><span class="en">Building no. 455 on plot 3442, recorded in the register of spatial units, with the address and house number <b>Drašča vas 26</b>. Once inhabited — which eases utility connections (water, electricity, fibre), registering residence or tourism activity, and legalisation or change of use.</span></p>
         </div>
       </div>
       <div class="card">
-        <img src="./assets/img/Hlev_mali_na_loki_01.jpg" alt="<span class="sl">Kamniti objekt na loki</span><span class="en">Stone building on the meadow</span>">
+        <img src="./assets/img/Hlev_mali_na_loki_01.jpg" alt="Kamniti objekt na loki / Stone building on the meadow">
         <div class="c-body">
           <span class="dim">56 m² · 14 × 4 m</span>
-          <h3><span class="sl">Kamniti objekt na loki</span><span class="en">Stone building on the meadow</span></h3>
-          <p><span class="sl">Objekt št. 179 neposredno ob reki, vrisan že v katastru 1825. Nekdanje gospodarsko poslopje — priložnost za rekonstrukcijo.</span><span class="en">Building no. 179 right by the river, mapped already in 1825. A former farm building — an opportunity for reconstruction.</span></p>
+          <h3><span class="sl">Kamniti objekt št. 179 na loki</span><span class="en">Stone building no. 179 on the meadow</span></h3>
+          <p><span class="sl">Na parceli 2662, neposredno ob reki. Verjetno nekdanji hlev ali gospodarski objekt, povezan s širšo rabo Jožmanovega mlina in kmetijskega posestva.</span><span class="en">On plot 2662, right by the river. Likely a former stable or farm building tied to the broader use of the Jožman Mill and the estate.</span></p>
         </div>
       </div>
       <div class="card">
-        <img src="./assets/img/Dvorisce_mlin_kozolec.kasca_01.jpg" alt="<span class="sl">Niz gospodarskih objektov</span><span class="en">Row of farm buildings</span>">
+        <img src="./assets/img/Dvorisce_mlin_kozolec.kasca_01.jpg" alt="Kozolec, kamnita klet, kašča in skedenj / Hayrack, cellar, granary and barn">
         <div class="c-body">
           <span class="dim">231 m² · 38,5 × 6 m</span>
-          <h3><span class="sl">Niz štirih objektov</span><span class="en">Row of four buildings</span></h3>
-          <p><span class="sl">Nasproti mlina: kozolec, stara kamnita klet (vklesana v skalo — idealna za vinsko klet), kašča in skedenj z atrijem.</span><span class="en">Opposite the mill: a hayrack, an old stone cellar (carved into rock — ideal for a wine cellar), a granary and a barn with an atrium.</span></p>
+          <h3><span class="sl">Kozolec, kamnita klet, kašča in skedenj</span><span class="en">Hayrack, stone cellar, granary &amp; barn</span></h3>
+          <p><span class="sl">Nasproti mlina stoji niz gospodarskih objektov — kozolec, kamnita klet, kašča in skedenj — ki skupaj z atrijem med skednjem in kaščo merijo cca. 230 m².</span><span class="en">Opposite the mill stands a row of farm buildings — a hayrack, a stone cellar, a granary and a barn — which, together with the atrium between the barn and granary, measure approx. 230 m².</span></p>
         </div>
       </div>
     </div>
