@@ -152,6 +152,24 @@ section:nth-of-type(even) .pot .box{background:var(--paper)}
 .pgroups{display:flex;flex-direction:column;gap:16px;margin-top:16px}
 .pgroup{display:flex;flex-direction:column;gap:9px}
 .pgroup .parcele-list{margin:0}
+.rgroup{margin-top:30px}
+.rgroup-h{display:flex;align-items:center;gap:10px;font-family:Georgia,serif;font-weight:600;font-size:1.3rem;color:var(--ink)}
+.rgroup-h::before{content:"";width:14px;height:14px;border-radius:4px;background:var(--gc);flex:none}
+.rcards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;align-items:start;margin-top:14px}
+.rcard{background:#fff;border:1px solid var(--line);border-top:3px solid var(--gc);border-radius:10px;padding:18px 20px;cursor:pointer;transition:box-shadow .2s;box-shadow:0 6px 22px rgba(0,0,0,.05)}
+.rcard:hover{box-shadow:0 10px 28px rgba(0,0,0,.1)}
+.rcard h4{font-family:Georgia,serif;font-size:1.08rem;font-weight:600;color:var(--ink);line-height:1.25;margin-bottom:13px}
+.rc-label{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--gc)}
+.rc-block .rc-label{display:block;margin-bottom:3px}
+.rc-block p{font-size:.92rem;color:#56534b;margin:0}
+.rc-block ul{margin:7px 0 0;padding-left:1.1em}
+.rc-block li{font-size:.9rem;color:#56534b;margin-bottom:2px}
+.rc-row{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:13px;border-top:1px solid var(--line);padding-top:12px}
+.rc-plus{width:22px;height:22px;border-radius:50%;background:rgba(0,0,0,.05);color:var(--gc);display:flex;align-items:center;justify-content:center;font-size:1.2rem;font-weight:700;line-height:1;flex:none;transition:transform .25s}
+.rcard.open .rc-plus{transform:rotate(45deg)}
+.rc-body{font-size:.92rem;color:#56534b;margin-top:7px;display:none}
+.rcard.open .rc-body{display:block}
+.g-nar{--gc:#2f5d6b}.g-ded{--gc:#5a6e4f}.g-tur{--gc:#a87f3c}.g-oko{--gc:#b5683f}
 .parcele-list{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 4px}
 .pno{font-family:"Courier New",monospace;font-size:.88rem;font-weight:700;color:var(--river-d);
   background:#fff;border:1px solid var(--line);border-radius:6px;padding:5px 11px}
@@ -495,36 +513,115 @@ footer{background:var(--ink);color:rgba(255,255,255,.6);text-align:center;paddin
   </div>
 </section>
 
-<section id="narava">
+<section id="potencial">
   <div class="wrap">
-    <div class="eyebrow"><span class="sl">Narava in doživetja</span><span class="en">Nature &amp; experiences</span></div>
-    <h2><span class="sl">Reka Krka pred pragom</span><span class="en">The Krka river at your doorstep</span></h2>
-    <p class="lead"><span class="sl">Neposredna bližina reke odpira širok spekter doživetij: naravno kopališče ob slapu in jezu, kajak in kanu, ribolov, pohodništvo in kolesarjenje po Suhi krajini.</span><span class="en">The river right at hand opens a wide range of experiences: a natural bathing spot by the waterfall and weir, kayaking and canoeing, fishing, hiking and cycling across the Suha krajina region.</span></p>
-    <div class="videos">
-      <video class="vert" controls preload="none" poster="./assets/video/reka_vert_poster.jpg">
-        <source src="./assets/video/reka_vert.mp4" type="video/mp4">
-      </video>
-      <video class="vert" controls preload="none" poster="./assets/video/slap_vertikalno_poster.jpg">
-        <source src="./assets/video/slap_vertikalno.mp4" type="video/mp4">
-      </video>
-    </div>
-    <div class="band">
-      <img class="tall" src="./assets/img/Slap_13.jpg" onclick="lb(this)" alt="<span class="sl">Slap na Krki</span><span class="en">Waterfall on the Krka</span>">
-      <img src="./assets/img/Kopalisce_nad_slapom_03.jpg" onclick="lb(this)" alt="<span class="sl">Naravno kopališče</span><span class="en">Natural bathing spot</span>">
-      <img src="./assets/img/Kopalisce_pod_slapom_02.jpg" onclick="lb(this)" alt="<span class="sl">Tolmun pod slapom</span><span class="en">Pool below the waterfall</span>">
-      <img src="./assets/img/Jez_ob_mlinu_01.jpg" onclick="lb(this)" alt="<span class="sl">Jez ob mlinu</span><span class="en">Weir by the mill</span>">
-      <img src="./assets/img/Mosticek_cez_jez.jpg" onclick="lb(this)" alt="<span class="sl">Mostiček čez jez</span><span class="en">Footbridge over the weir</span>">
-      <img src="./assets/img/Polotok_ob_jezu_01.jpg" onclick="lb(this)" alt="<span class="sl">Polotok ob jezu</span><span class="en">Peninsula by the weir</span>">
-      <img src="./assets/img/Slap_05.jpg" onclick="lb(this)" alt="<span class="sl">Slap</span><span class="en">Waterfall</span>">
-    </div>
-    <div class="pot" style="margin-top:14px">
-      <div class="box">
-        <h3><span class="sl">Rivčja jama</span><span class="en">The Rivčja cave</span></h3>
-        <p><span class="sl">Naravni kraški pojav v neposredni bližini mlina — izhodišče za vodena doživetja in interpretacijo naravne dediščine.</span><span class="en">A natural karst cave in the immediate vicinity of the mill — a basis for guided experiences and nature interpretation.</span></p>
+    <div class="eyebrow"><span class="sl">Razvojni potencial</span><span class="en">Development potential</span></div>
+    <h2><span class="sl">Razvojni potencial destinacije</span><span class="en">The destination’s development potential</span></h2>
+    <p class="lead"><span class="sl">Edinstvena kombinacija kulturne dediščine, reke Krke in trajnostnega turizma na enem mestu.</span><span class="en">A unique combination of cultural heritage, the Krka river and sustainable tourism in one place.</span></p>
+    <p><span class="sl">Jožmanov mlin ni zgolj zgodovinski objekt, temveč izjemna razvojna priložnost za oblikovanje butične turistične destinacije, ki združuje kulturno dediščino, naravne danosti reke Krke in trajnostni aktivni turizem.</span><span class="en">The Jožman Mill is not merely a historic building but an exceptional development opportunity to create a boutique tourism destination that unites cultural heritage, the natural assets of the Krka river and sustainable active tourism.</span></p>
+    <p><span class="sl">Le redko se na eni lokaciji prepletajo skoraj 300-letna mlinarska tradicija, zasebna lega ob reki, naravno kopališče, zgodovinski jez, gozdovi, kraška jama ter številne znamenitosti Suhe krajine in Dolenjske. Prav ta kombinacija omogoča razvoj turistične ponudbe z visoko dodano vrednostjo skozi vse leto.</span><span class="en">Rarely do almost 300 years of milling tradition, a private riverside setting, a natural bathing spot, a historic weir, forests, a karst cave and the many attractions of Suha krajina and Dolenjska come together in one place. It is precisely this combination that enables a high-value tourism offering throughout the year.</span></p>
+
+    <div class="rgroup g-nar">
+      <div class="rgroup-h"><span class="sl">Narava</span><span class="en">Nature</span></div>
+      <div class="rcards">
+        <div class="rcard" onclick="toggleRC(this)">
+          <h4>Doživetja na reki Krki</h4>
+          <div class="rc-block"><span class="rc-label">Kaj ponuja</span><p>Naravno kopališče, jez, slap, mirni odseki reke in neposreden stik z vodo.</p></div>
+          <div class="rc-row"><span class="rc-label">Potencial</span><span class="rc-plus">+</span></div>
+          <div class="rc-body">Kopanje, plavanje, sprostitev, zasebna plaža za goste.</div>
+          <div class="rc-row"><span class="rc-label">Zakaj je posebno</span><span class="rc-plus">+</span></div>
+          <div class="rc-body">Mlin stoji neposredno ob enem najlepših naravnih odsekov zgornje Krke.</div>
+        </div>
+        <div class="rcard" onclick="toggleRC(this)">
+          <h4>Kajak, kanu in SUP center</h4>
+          <div class="rc-block"><span class="rc-label">Kaj ponuja</span><p>Izposoja opreme ter organizirani izleti po zgornjem toku Krke.</p></div>
+          <div class="rc-row"><span class="rc-label">Potencial</span><span class="rc-plus">+</span></div>
+          <div class="rc-body">Vodeni izleti, družinski programi, večdnevne ture.</div>
+          <div class="rc-row"><span class="rc-label">Zakaj je posebno</span><span class="rc-plus">+</span></div>
+          <div class="rc-body">Miren tok reke omogoča rekreativno veslanje tudi manj izkušenim obiskovalcem.</div>
+        </div>
+        <div class="rcard" onclick="toggleRC(this)">
+          <h4>Ribolovni turizem</h4>
+          <div class="rc-block"><span class="rc-label">Kaj ponuja</span><p>Paketna ponudba za športne ribiče.</p></div>
+          <div class="rc-row"><span class="rc-label">Potencial</span><span class="rc-plus">+</span></div>
+          <div class="rc-body">Ribiški vikendi, vodeni ribolov, sodelovanje z lokalnimi ribiškimi družinami.</div>
+          <div class="rc-row"><span class="rc-label">Zakaj je posebno</span><span class="rc-plus">+</span></div>
+          <div class="rc-body">Krka velja za eno najbolj priljubljenih slovenskih rek za sladkovodni ribolov.</div>
+        </div>
+        <div class="rcard" onclick="toggleRC(this)">
+          <h4>Rivčja jama in jamski turizem</h4>
+          <div class="rc-block"><span class="rc-label">Kaj ponuja</span><p>Razvoj učne poti in interpretacije kraškega sveta.</p></div>
+          <div class="rc-row"><span class="rc-label">Potencial</span><span class="rc-plus">+</span></div>
+          <div class="rc-body">Vodeni jamski ogledi, naravoslovni dnevi, opazovanje netopirjev.</div>
+          <div class="rc-row"><span class="rc-label">Zakaj je posebno</span><span class="rc-plus">+</span></div>
+          <div class="rc-body">Rivčja jama leži le nekaj sto metrov od mlina in je pomembna naravna vrednota, vključena v Naturo 2000.</div>
+        </div>
       </div>
-      <div class="box">
-        <h3><span class="sl">Doživljajski in kulinarični turizem</span><span class="en">Experiential &amp; culinary tourism</span></h3>
-        <p><span class="sl">Možnost oživitve mletja žita ter razvoja kulinaričnih in izobraževalnih delavnic z lokalnimi ponudniki.</span><span class="en">The potential to revive grain milling and to develop culinary and educational workshops with local producers.</span></p>
+    </div>
+
+    <div class="rgroup g-ded">
+      <div class="rgroup-h"><span class="sl">Dediščina</span><span class="en">Heritage</span></div>
+      <div class="rcards">
+        <div class="rcard" onclick="toggleRC(this)">
+          <h4>Mlinarska dediščina in interpretacijski center</h4>
+          <div class="rc-block"><span class="rc-label">Kaj ponuja</span><p>Obnova enega najstarejših mlinov na reki Krki z možnostjo predstavitve zgodovine mlinarstva, prikaza mletja žita, domače moke in tradicionalnih obrti.</p></div>
+          <div class="rc-row"><span class="rc-label">Potencial</span><span class="rc-plus">+</span></div>
+          <div class="rc-body">Doživljajski muzej, interpretacijski center, vodeni ogledi, delavnice za šole in turiste.</div>
+          <div class="rc-row"><span class="rc-label">Zakaj je posebno</span><span class="rc-plus">+</span></div>
+          <div class="rc-body">Jožmanov mlin je imel kar sedem vodnih koles, kar ga uvršča med najpomembnejše tehniške spomenike ob reki Krki.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="rgroup g-tur">
+      <div class="rgroup-h"><span class="sl">Turizem</span><span class="en">Tourism</span></div>
+      <div class="rcards">
+        <div class="rcard" onclick="toggleRC(this)">
+          <h4>Butični hotel ali turistično naselje</h4>
+          <div class="rc-block"><span class="rc-label">Kaj ponuja</span><p>Prenova mlina in spremljajočih objektov v apartmaje, butični hotel ali manjše turistično naselje.</p></div>
+          <div class="rc-row"><span class="rc-label">Potencial</span><span class="rc-plus">+</span></div>
+          <div class="rc-body">Premium gostje, wellness vikendi, digitalni nomadi, poslovni oddihi.</div>
+          <div class="rc-row"><span class="rc-label">Zakaj je posebno</span><span class="rc-plus">+</span></div>
+          <div class="rc-body">Območje že omogoča turistično namembnost, ZVKDS pa dopušča preureditev mlina v butični hotel oziroma interpretacijski center.</div>
+        </div>
+        <div class="rcard" onclick="toggleRC(this)">
+          <h4>Lokalna gastronomija in vinska zgodba</h4>
+          <div class="rc-block"><span class="rc-label">Kaj ponuja</span><p>Mlinarska moka, kruh iz krušne peči, lokalni siri, med, vino in tradicionalna dolenjska kulinarika.</p></div>
+          <div class="rc-row"><span class="rc-label">Potencial</span><span class="rc-plus">+</span></div>
+          <div class="rc-body">Kulinarični vikendi, degustacije, kuharske delavnice.</div>
+          <div class="rc-row"><span class="rc-label">Zakaj je posebno</span><span class="rc-plus">+</span></div>
+          <div class="rc-body">Kašča in kamnita klet omogočata razvoj vinske kleti ter prostora za degustacije.</div>
+        </div>
+        <div class="rcard" onclick="toggleRC(this)">
+          <h4>Celostna butična destinacija</h4>
+          <div class="rc-block"><span class="rc-label">Kaj ponuja</span><p>Združitev zgodovine, narave, aktivnosti, kulinarike in nastanitev v eno prepoznavno zgodbo.</p></div>
+          <div class="rc-row"><span class="rc-label">Potencial</span><span class="rc-plus">+</span></div>
+          <div class="rc-body">Premium destinacija z visoko dodano vrednostjo, primerna za družine, pare, podjetja, šole in tuje obiskovalce.</div>
+          <div class="rc-row"><span class="rc-label">Zakaj je posebno</span><span class="rc-plus">+</span></div>
+          <div class="rc-body">Takšna kombinacija zasebnega posestva ob reki, zgodovinskega mlina, naravnega kopališča, kraške jame, športnih aktivnosti in bogate kulturne dediščine je v Sloveniji izjemno redka ter predstavlja močno osnovo za razvoj trajnostnega turizma.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="rgroup g-oko">
+      <div class="rgroup-h"><span class="sl">Okolica</span><span class="en">Surroundings</span></div>
+      <div class="rcards">
+        <div class="rcard" onclick="toggleRC(this)">
+          <h4>Pohodništvo in kolesarjenje</h4>
+          <div class="rc-block"><span class="rc-label">Kaj ponuja</span><p>Mreža poti skozi Suho krajino in dolino Krke.</p></div>
+          <div class="rc-row"><span class="rc-label">Potencial</span><span class="rc-plus">+</span></div>
+          <div class="rc-body">Tematske poti, družinski pohodi, gravel in MTB ture.</div>
+          <div class="rc-row"><span class="rc-label">Zakaj je posebno</span><span class="rc-plus">+</span></div>
+          <div class="rc-body">Mlin lahko postane izhodišče za raziskovanje širše okolice.</div>
+        </div>
+        <div class="rcard" onclick="toggleRC(this)">
+          <h4>Kulturne znamenitosti v okolici</h4>
+          <div class="rc-block"><span class="rc-label">Kaj ponuja</span><p>Povezava z najpomembnejšimi znamenitostmi Suhe krajine in Dolenjske. <b>TOP 5 izletov</b> (do ~50 km):</p>
+            <ul><li>Grad Žužemberk</li><li>Železolivarski muzej Dvor</li><li>Izvir reke Krke</li><li>Cistercijanski samostan Stična</li><li>Muzej na prostem in Kartuzija Pleterje</li></ul>
+          </div>
+          <div class="rc-row"><span class="rc-label">Potencial</span><span class="rc-plus">+</span></div>
+          <div class="rc-body">Enodnevni izleti za domače in tuje goste.</div>
+        </div>
       </div>
     </div>
   </div>
@@ -533,7 +630,15 @@ footer{background:var(--ink);color:rgba(255,255,255,.6);text-align:center;paddin
 <section id="galerija">
   <div class="wrap">
     <div class="eyebrow"><span class="sl">Galerija</span><span class="en">Gallery</span></div>
-    <h2><span class="sl">Posestvo v slikah</span><span class="en">The estate in pictures</span></h2>
+    <h2><span class="sl">Posestvo v slikah in videu</span><span class="en">The estate in pictures and video</span></h2>
+    <div class="videos" style="margin-bottom:20px">
+      <video class="vert" controls preload="none" poster="./assets/video/reka_vert_poster.jpg">
+        <source src="./assets/video/reka_vert.mp4" type="video/mp4">
+      </video>
+      <video class="vert" controls preload="none" poster="./assets/video/slap_vertikalno_poster.jpg">
+        <source src="./assets/video/slap_vertikalno.mp4" type="video/mp4">
+      </video>
+    </div>
     <div class="gal">
       <figure class="g-item" onclick="lb(this)"><img loading="lazy" src="./assets/img/Mlin_01.jpg" alt="Mlin 01"></figure>
 <figure class="g-item" onclick="lb(this)"><img loading="lazy" src="./assets/img/Mlin_05.jpg" alt="Mlin 05"></figure>
@@ -606,6 +711,9 @@ function lb(el){
 }
 function closeLb(){ document.getElementById('lightbox').style.display='none'; }
 document.addEventListener('keydown',function(e){ if(e.key==='Escape') closeLb(); });
+
+/* Razširljive kartice razvojnega potenciala — neodvisni toggle */
+function toggleRC(el){ el.classList.toggle('open'); }
 
 /* Mini-carousel v kartici (.cc) — avto 5s, levo/desno, pike, poteg */
 document.querySelectorAll('.cc').forEach(function(cc){
