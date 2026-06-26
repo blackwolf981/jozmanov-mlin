@@ -155,6 +155,15 @@ section:nth-of-type(even) .pot .box{background:var(--paper)}
 .obj-list{display:flex;flex-wrap:wrap;gap:9px;margin:16px 0 0}
 .obj-chip{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);
   border-radius:24px;padding:6px 15px 6px 7px;font-weight:600;font-size:.93rem;color:var(--ink)}
+.objtab{width:100%;border-collapse:collapse;margin-top:18px;font-size:.95rem;background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.objtab th,.objtab td{padding:11px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:middle}
+.objtab thead th{font-size:.74rem;text-transform:uppercase;letter-spacing:.6px;color:var(--stone-d);font-weight:700}
+.objtab td.n{width:40px;padding-right:0}
+.objtab th.area,.objtab td.area{text-align:right;font-weight:700;color:var(--river-d);white-space:nowrap}
+.objtab .name{font-weight:600;color:var(--ink)}
+.objtab tbody tr:last-child td{border-bottom:0}
+.objtab .total td{border-top:2px solid var(--stone);background:rgba(47,93,107,.06);font-weight:700}
+.objtab .total .area{font-size:1.05rem;color:var(--river-d)}
 .subhead{margin-top:1.6em}
 .conn{list-style:none;margin:.2em 0 0;display:flex;flex-direction:column;gap:9px}
 .conn li{display:flex;align-items:center;gap:10px;font-size:.95rem;color:#56534b}
@@ -229,7 +238,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.6);text-align:center;paddin
       <div class="stat">
         <div class="ic"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V8l7-4 7 4v13"/><path d="M9 21v-5h6v5M9 11h.01M15 11h.01"/></svg></div>
         <div class="t"><span class="sl">6 zgodovinskih objektov</span><span class="en">6 historic buildings</span></div>
-        <div class="s"><span class="sl">Skupaj približno <b>413 m²</b> obstoječih bruto površin</span><span class="en">Approx. <b>413 m²</b> of existing gross floor area in total</span></div>
+        <div class="s"><span class="sl">Skupaj približno <b>414 m²</b> obstoječih bruto površin</span><span class="en">Approx. <b>414 m²</b> of existing gross floor area in total</span></div>
       </div>
 
       <div class="stat">
@@ -345,15 +354,21 @@ footer{background:var(--ink);color:rgba(255,255,255,.6);text-align:center;paddin
     </div>
 
     <h3 class="subhead"><span class="sl">Objekti na posestvu</span><span class="en">Buildings on the estate</span></h3>
-    <p class="lead"><span class="sl">Na posestvu stoji Jožmanov mlin in pripadajoča kmetijska poslopja — skupaj 6 objektov v skupni <b>bruto površini cca. 413 m²</b>.</span><span class="en">The estate holds the Jožman Mill and its accompanying farm buildings — six buildings in total with a combined <b>gross area of approx. 413 m²</b>.</span></p>
-    <div class="obj-list">
-      <span class="obj-chip"><span class="onum">1</span><span class="sl">Mlin</span><span class="en">Mill</span></span>
-      <span class="obj-chip"><span class="onum">2</span><span class="sl">Kamniti objekt na loki</span><span class="en">Stone building on the meadow</span></span>
-      <span class="obj-chip"><span class="onum">3</span><span class="sl">Kozolec</span><span class="en">Hayrack</span></span>
-      <span class="obj-chip"><span class="onum">4</span><span class="sl">Kamnita klet</span><span class="en">Stone cellar</span></span>
-      <span class="obj-chip"><span class="onum">5</span><span class="sl">Kašča</span><span class="en">Granary</span></span>
-      <span class="obj-chip"><span class="onum">6</span><span class="sl">Skedenj</span><span class="en">Barn</span></span>
-    </div>
+    <p class="lead"><span class="sl">Na posestvu stoji šest zgodovinskih objektov, povezanih z nekdanjo mlinarsko in kmetijsko dejavnostjo.</span><span class="en">The estate holds six historic buildings connected to its former milling and farming activity.</span></p>
+    <table class="objtab">
+      <thead>
+        <tr><th class="n"></th><th><span class="sl">Objekt</span><span class="en">Building</span></th><th class="area"><span class="sl">Bruto površina</span><span class="en">Gross area</span></th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="n"><span class="onum">1</span></td><td class="name"><span class="sl">Mlin</span><span class="en">Mill</span></td><td class="area">127 m²</td></tr>
+        <tr><td class="n"><span class="onum">2</span></td><td class="name"><span class="sl">Kamniti objekt na loki</span><span class="en">Stone building on the meadow</span></td><td class="area">56 m²</td></tr>
+        <tr><td class="n"><span class="onum">3</span></td><td class="name"><span class="sl">Kozolec</span><span class="en">Hayrack</span></td><td class="area">54 m²</td></tr>
+        <tr><td class="n"><span class="onum">4</span></td><td class="name"><span class="sl">Kamnita klet</span><span class="en">Stone cellar</span></td><td class="area">48 m²</td></tr>
+        <tr><td class="n"><span class="onum">5</span></td><td class="name"><span class="sl">Kašča (z atrijem)</span><span class="en">Granary (with atrium)</span></td><td class="area">57 m²</td></tr>
+        <tr><td class="n"><span class="onum">6</span></td><td class="name"><span class="sl">Skedenj</span><span class="en">Barn</span></td><td class="area">72 m²</td></tr>
+        <tr class="total"><td class="n"></td><td class="name"><span class="sl">Skupaj — 6 objektov</span><span class="en">Total — 6 buildings</span></td><td class="area">414 m²</td></tr>
+      </tbody>
+    </table>
 
     <a class="zoomable objekti-frame" data-full="./assets/img/Objekti.png" onclick="lb(this)">
       <img src="./assets/img/Objekti.png" alt="Shema objektov na posestvu / Layout of the estate buildings">
