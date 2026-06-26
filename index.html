@@ -129,6 +129,7 @@ section:nth-of-type(even) .pot .box{background:var(--paper)}
 .zoomable .cta svg{width:20px;height:20px;flex:none}
 .map-frame{aspect-ratio:3/2}
 .parcele-frame{aspect-ratio:1400/480;margin-top:18px}
+.objekti-frame{aspect-ratio:869/372;margin-top:18px}
 .parcele-list{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 4px}
 .pno{font-family:"Courier New",monospace;font-size:.88rem;font-weight:700;color:var(--river-d);
   background:#fff;border:1px solid var(--line);border-radius:6px;padding:5px 11px}
@@ -316,13 +317,22 @@ footer{background:var(--ink);color:rgba(255,255,255,.6);text-align:center;paddin
     </div>
 
     <h3 class="subhead"><span class="sl">Objekti na posestvu</span><span class="en">Buildings on the estate</span></h3>
-    <p class="lead"><span class="sl">Na posestvu stoji Jožmanov mlin in pripadajoča kmetijska poslopja — skupaj 6 objektov v skupni bruto površini cca. 413 m²: mlin, kamniti objekt na loki, kozolec, kamnita klet, kašča in skedenj.</span><span class="en">The estate holds the Jožman Mill and its accompanying farm buildings — six buildings in total with a combined gross area of approx. 413 m²: the mill, the stone building on the meadow, a hayrack, a stone cellar, a granary and a barn.</span></p>
-    <div class="cards">
+    <p class="lead"><span class="sl">Na posestvu stoji Jožmanov mlin in pripadajoča kmetijska poslopja — skupaj 6 objektov v skupni bruto površini cca. 413 m²: MLIN (1), KAMNITI OBJEKT NA LOKI (2), KOZOLEC (3), KAMNITA KLET (4), KAŠČA (5) in SKEDENJ (6).</span><span class="en">The estate holds the Jožman Mill and its accompanying farm buildings — six buildings in total with a combined gross area of approx. 413 m²: THE MILL (1), THE STONE BUILDING ON THE MEADOW (2), THE HAYRACK (3), THE STONE CELLAR (4), THE GRANARY (5) and THE BARN (6).</span></p>
+
+    <a class="zoomable objekti-frame" data-full="./assets/img/Objekti.png" onclick="lb(this)">
+      <img src="./assets/img/Objekti.png" alt="Shema objektov na posestvu / Layout of the estate buildings">
+      <span class="cta">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+        <span class="sl">Povečaj shemo objektov</span><span class="en">Enlarge the layout</span>
+      </span>
+    </a>
+
+    <div class="cards" style="margin-top:30px">
       <div class="card">
         <img src="./assets/img/Mlin_05.jpg" alt="Jožmanov mlin">
         <div class="c-body">
           <span class="dim">126,75 m² · 19,5 × 6,5 m</span>
-          <h3><span class="sl">Jožmanov mlin</span><span class="en">The Jožman Mill</span></h3>
+          <h3><span class="sl">Jožmanov mlin (1)</span><span class="en">The Jožman Mill (1)</span></h3>
           <p><span class="sl">Stavba št. 455 na parceli 3442, evidentirana v registru prostorskih enot, z naslovom in hišno številko <b>Drašča vas 26</b>. Objekt je bil v preteklosti naseljen, kar olajša priklop na infrastrukturo (voda, elektrika, optika), prijavo bivališča ali turistične dejavnosti ter legalizacijo in spremembo namembnosti.</span><span class="en">Building no. 455 on plot 3442, recorded in the register of spatial units, with the address and house number <b>Drašča vas 26</b>. Once inhabited — which eases utility connections (water, electricity, fibre), registering residence or tourism activity, and legalisation or change of use.</span></p>
         </div>
       </div>
@@ -330,16 +340,16 @@ footer{background:var(--ink);color:rgba(255,255,255,.6);text-align:center;paddin
         <img src="./assets/img/Hlev_mali_na_loki_01.jpg" alt="Kamniti objekt na loki / Stone building on the meadow">
         <div class="c-body">
           <span class="dim">56 m² · 14 × 4 m</span>
-          <h3><span class="sl">Kamniti objekt št. 179 na loki</span><span class="en">Stone building no. 179 on the meadow</span></h3>
-          <p><span class="sl">Na parceli 2662, neposredno ob reki. Verjetno nekdanji hlev ali gospodarski objekt, povezan s širšo rabo Jožmanovega mlina in kmetijskega posestva.</span><span class="en">On plot 2662, right by the river. Likely a former stable or farm building tied to the broader use of the Jožman Mill and the estate.</span></p>
+          <h3><span class="sl">Kamniti objekt na loki (2)</span><span class="en">Stone building on the meadow (2)</span></h3>
+          <p><span class="sl">Verjetno nekdanji hlev ali gospodarski objekt, povezan s širšo rabo Jožmanovega mlina in kmetijskega posestva.</span><span class="en">Likely a former stable or farm building tied to the broader use of the Jožman Mill and the estate.</span></p>
         </div>
       </div>
       <div class="card">
         <img src="./assets/img/Dvorisce_mlin_kozolec.kasca_01.jpg" alt="Kozolec, kamnita klet, kašča in skedenj / Hayrack, cellar, granary and barn">
         <div class="c-body">
           <span class="dim">231 m² · 38,5 × 6 m</span>
-          <h3><span class="sl">Kozolec, kamnita klet, kašča in skedenj</span><span class="en">Hayrack, stone cellar, granary &amp; barn</span></h3>
-          <p><span class="sl">Nasproti mlina stoji niz gospodarskih objektov — kozolec, kamnita klet, kašča in skedenj — ki skupaj z atrijem med skednjem in kaščo merijo cca. 230 m².</span><span class="en">Opposite the mill stands a row of farm buildings — a hayrack, a stone cellar, a granary and a barn — which, together with the atrium between the barn and granary, measure approx. 230 m².</span></p>
+          <h3><span class="sl">Kozolec (3), kamnita klet (4), kašča (5) in skedenj (6)</span><span class="en">Hayrack (3), stone cellar (4), granary (5) &amp; barn (6)</span></h3>
+          <p><span class="sl">Nasproti mlina stoji niz gospodarskih objektov — kozolec, kamnita klet, kašča in skedenj — ki skupaj z atrijem med skednjem in kaščo merijo cca. 230 m² bruto površine.</span><span class="en">Opposite the mill stands a row of farm buildings — a hayrack, a stone cellar, a granary and a barn — which, together with the atrium between the barn and granary, measure approx. 230 m² of gross area.</span></p>
         </div>
       </div>
     </div>
