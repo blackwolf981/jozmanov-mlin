@@ -53,23 +53,23 @@ nav.scrolled .lang-toggle button{color:var(--stone-d)}
 .scroll-cue{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:2;color:#fff;font-size:1.6rem;text-decoration:none;animation:bob 2s infinite}
 @keyframes bob{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,8px)}}
 
-.facts{background:linear-gradient(180deg,var(--river-d),#1d3c46);color:#fff;position:relative;overflow:hidden}
+.facts{background:linear-gradient(180deg,var(--river-d),#1d3c46);color:#fff;position:relative;overflow:hidden;padding:36px 0 30px}
 .facts .wrap{position:relative}
 .stats{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;
   scrollbar-width:none;-ms-overflow-style:none;padding:4px 2px;scroll-behavior:smooth}
 .stats::-webkit-scrollbar{display:none}
 .facts:not(.is-carousel) .stats{justify-content:center}
 .stat{flex:0 0 auto;width:calc((100% - 42px)/4);min-width:208px;scroll-snap-align:center;
-  text-align:center;padding:24px 18px;border-radius:14px;
+  text-align:center;padding:16px 18px 18px;border-radius:14px;
   background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.09);transition:.25s}
 .stat:hover{background:rgba(255,255,255,.09);transform:translateY(-3px)}
-.stat .ic{width:44px;height:44px;margin:0 auto 14px;display:flex;align-items:center;justify-content:center;
+.stat .ic{width:38px;height:38px;margin:0 auto 9px;display:flex;align-items:center;justify-content:center;
   border-radius:50%;background:rgba(255,255,255,.1);color:var(--stone)}
-.stat .ic svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
-.stat .t{font-family:Georgia,serif;font-weight:600;font-size:1.32rem;line-height:1.22;color:#fff;margin-bottom:.45em}
-.stat .s{font-size:.85rem;opacity:.8;letter-spacing:.2px;line-height:1.45}
+.stat .ic svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.stat .t{font-family:Georgia,serif;font-weight:600;font-size:1.26rem;line-height:1.2;color:#fff;margin-bottom:.32em}
+.stat .s{font-size:.84rem;opacity:.8;letter-spacing:.2px;line-height:1.4}
 .stat .s b{color:#fff;opacity:1;font-weight:700}
-.stats-dots{display:flex;justify-content:center;gap:7px;margin-top:20px}
+.stats-dots{display:flex;justify-content:center;gap:7px;margin-top:13px}
 .facts:not(.is-carousel) .stats-dots{display:none}
 .stats-dots button{width:8px;height:8px;border-radius:50%;border:0;cursor:pointer;padding:0;
   background:rgba(255,255,255,.3);transition:.25s}
