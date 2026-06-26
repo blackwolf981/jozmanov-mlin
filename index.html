@@ -135,6 +135,9 @@ section:nth-of-type(even) .pot .box{background:var(--paper)}
 .pno{font-family:"Courier New",monospace;font-size:.88rem;font-weight:700;color:var(--river-d);
   background:#fff;border:1px solid var(--line);border-radius:6px;padding:5px 11px}
 .subhead{margin-top:1.6em}
+.conn{list-style:none;margin:.2em 0 0;display:flex;flex-direction:column;gap:9px}
+.conn li{display:flex;align-items:center;gap:10px;font-size:.95rem;color:#56534b}
+.conn svg{width:19px;height:19px;flex:none;color:var(--river);fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 
 #lightbox{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:100;display:none;align-items:center;justify-content:center;cursor:zoom-out}
 #lightbox img{max-width:92%;max-height:90%;border-radius:4px;box-shadow:0 0 60px rgba(0,0,0,.6)}
@@ -392,19 +395,27 @@ footer{background:var(--ink);color:rgba(255,255,255,.6);text-align:center;paddin
     <div class="eyebrow"><span class="sl">Dostop in komunalna infrastruktura</span><span class="en">Access &amp; utilities</span></div>
     <div class="pot">
       <div class="box">
-        <h3><span class="sl">Dostop</span><span class="en">Access</span></h3>
-        <p style="margin-bottom:.8em"><span class="sl">Urejen je dostop po lastniški parceli, kjer trenutno že poteka kolovozna pot in omogoča ureditev ustrezne dostopne ceste.</span><span class="en">Access is provided along an owned plot, where a cart track currently runs and allows a proper access road to be built.</span></p>
-        <p><span class="sl">Lastniško zemljišče bo omogočilo tudi kontrolo dostopa (z omejevanjem ali zapiranjem poti po potrebi — npr. izven delovnega časa, ob posebnih dogodkih ali za potrebe ekskluzivnih turističnih programov).</span><span class="en">Ownership of the land will also allow access control (limiting or closing the path when needed — e.g. outside working hours, during special events, or for exclusive tourism programmes).</span></p>
+        <h3><span class="sl">Dostopnost</span><span class="en">Accessibility</span></h3>
+        <p style="margin-bottom:.8em"><span class="sl">Do posestva vodi dostop po lastniški parceli, kjer trenutno poteka kolovozna pot, ki omogoča ureditev ustrezne dostopne ceste tudi za večja gradbena vozila.</span><span class="en">Access to the estate runs along an owned plot, where a cart track currently runs and allows a proper access road to be built — suitable even for larger construction vehicles.</span></p>
+        <p style="margin-bottom:.5em"><span class="sl">Posest je dobro povezana tudi z mednarodnimi prometnimi povezavami:</span><span class="en">The estate is also well connected to international transport links:</span></p>
+        <ul class="conn">
+          <li><svg viewBox="0 0 24 24"><path d="M3 21h18M6 21V7l6-3v17M18 21V11l-6-3M9 9h.01M9 13h.01M9 17h.01"/></svg><span><span class="sl"><b>Ljubljana</b> — 36 km (≈ 30 min)</span><span class="en"><b>Ljubljana</b> — 36 km (≈ 30 min)</span></span></li>
+          <li><svg viewBox="0 0 24 24"><path d="M22 2 11 13M22 2 15 22l-4-9-9-4 20-7z"/></svg><span><span class="sl"><b>Letališče Jožeta Pučnika Ljubljana</b> — približno 65 km (≈ 45 min)</span><span class="en"><b>Ljubljana Jože Pučnik Airport</b> — approx. 65 km (≈ 45 min)</span></span></li>
+          <li><svg viewBox="0 0 24 24"><path d="M22 2 11 13M22 2 15 22l-4-9-9-4 20-7z"/></svg><span><span class="sl"><b>Letališče Franjo Tuđman Zagreb</b> — približno 105 km (≈ 1 h 20 min)</span><span class="en"><b>Zagreb Franjo Tuđman Airport</b> — approx. 105 km (≈ 1 h 20 min)</span></span></li>
+        </ul>
       </div>
       <div class="box">
         <h3><span class="sl">Komunalna infrastruktura</span><span class="en">Utilities</span></h3>
-        <p style="margin-bottom:.5em"><span class="sl">Na posestvu ali v njegovi neposredni bližini so že zagotovljeni priključki za:</span><span class="en">Connections are already provided on the estate or in its immediate vicinity for:</span></p>
+        <p style="margin-bottom:.5em"><span class="sl">Na posestvu oziroma v njegovi neposredni bližini so že zagotovljene možnosti priključitve na:</span><span class="en">On the estate or in its immediate vicinity, connections are already available to:</span></p>
         <ul class="clean">
-          <li><span class="sl">vodovod,</span><span class="en">water supply,</span></li>
-          <li><span class="sl">elektriko,</span><span class="en">electricity,</span></li>
-          <li><span class="sl">optični internet.</span><span class="en">fibre internet.</span></li>
+          <li><span class="sl">vodovodno omrežje,</span><span class="en">the water supply network,</span></li>
+          <li><span class="sl">elektroenergetsko omrežje,</span><span class="en">the electricity network,</span></li>
+          <li><span class="sl">optično telekomunikacijsko omrežje.</span><span class="en">the fibre-optic telecommunications network.</span></li>
         </ul>
       </div>
+    </div>
+    <div style="margin-top:22px;background:#fff;border-left:4px solid var(--river);padding:18px 24px;border-radius:0 8px 8px 0;box-shadow:0 6px 22px rgba(0,0,0,.05)">
+      <p style="margin:0;font-size:.95rem;color:#56534b"><span class="sl">Pomembna prednost projekta je, da je <b>Jožmanov mlin evidentiran v Registru prostorskih enot</b> in ima dodeljen <b>uradni naslov Drašča vas 26</b>. Ker je bil objekt v preteklosti naseljen in priključen na osnovno komunalno infrastrukturo, predstavlja to pomembno izhodišče za njegovo obnovo ter ponovno vzpostavitev stanovanjske ali turistične namembnosti.</span><span class="en">A key advantage of the project is that the <b>Jožman Mill is recorded in the Register of Spatial Units</b> and has an <b>assigned official address, Drašča vas 26</b>. As the building was previously inhabited and connected to basic utilities, this provides an important basis for its renovation and the re-establishment of residential or tourism use.</span></p>
     </div>
   </div>
 </section>
