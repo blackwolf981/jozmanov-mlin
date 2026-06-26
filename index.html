@@ -53,10 +53,34 @@ nav.scrolled .lang-toggle button{color:var(--stone-d)}
 .scroll-cue{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:2;color:#fff;font-size:1.6rem;text-decoration:none;animation:bob 2s infinite}
 @keyframes bob{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,8px)}}
 
-.facts{background:var(--river-d);color:#fff}
-.facts .grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;text-align:center}
-.fact .num{font-family:Georgia,serif;font-size:2.1rem;color:#fff;line-height:1}
-.fact .lbl{font-size:.82rem;opacity:.82;margin-top:.5em;letter-spacing:.5px}
+.facts{background:linear-gradient(180deg,var(--river-d),#1d3c46);color:#fff;position:relative;overflow:hidden}
+.facts .wrap{position:relative}
+.stats{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;
+  scrollbar-width:none;-ms-overflow-style:none;padding:4px 2px;scroll-behavior:smooth}
+.stats::-webkit-scrollbar{display:none}
+.facts:not(.is-carousel) .stats{justify-content:center}
+.stat{flex:0 0 auto;width:calc((100% - 42px)/4);min-width:208px;scroll-snap-align:center;
+  text-align:center;padding:24px 18px;border-radius:14px;
+  background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.09);transition:.25s}
+.stat:hover{background:rgba(255,255,255,.09);transform:translateY(-3px)}
+.stat .ic{width:44px;height:44px;margin:0 auto 14px;display:flex;align-items:center;justify-content:center;
+  border-radius:50%;background:rgba(255,255,255,.1);color:var(--stone)}
+.stat .ic svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.stat .t{font-family:Georgia,serif;font-weight:600;font-size:1.32rem;line-height:1.22;color:#fff;margin-bottom:.45em}
+.stat .s{font-size:.85rem;opacity:.8;letter-spacing:.2px;line-height:1.45}
+.stat .s b{color:#fff;opacity:1;font-weight:700}
+.stats-dots{display:flex;justify-content:center;gap:7px;margin-top:20px}
+.facts:not(.is-carousel) .stats-dots{display:none}
+.stats-dots button{width:8px;height:8px;border-radius:50%;border:0;cursor:pointer;padding:0;
+  background:rgba(255,255,255,.3);transition:.25s}
+.stats-dots button.on{background:#fff;width:22px;border-radius:4px}
+.stats-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:40px;height:40px;
+  border-radius:50%;border:0;cursor:pointer;color:#fff;background:rgba(0,0,0,.28);
+  display:none;align-items:center;justify-content:center;transition:.2s}
+.stats-arrow:hover{background:rgba(0,0,0,.5)}
+.stats-arrow svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.stats-arrow.prev{left:-8px}.stats-arrow.next{right:-8px}
+.facts.is-carousel .stats-arrow{display:flex}
 
 .cols{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
 .cols img{width:100%;border-radius:8px;box-shadow:0 12px 40px rgba(0,0,0,.14)}
@@ -122,7 +146,7 @@ section:nth-of-type(even) .pot .box{background:var(--paper)}
 footer{background:var(--ink);color:rgba(255,255,255,.6);text-align:center;padding:26px;font-size:.82rem}
 
 @media(max-width:860px){
-  .facts .grid{grid-template-columns:repeat(2,1fr);gap:24px 8px}
+  .stat{width:78%;min-width:0}
   .cols{grid-template-columns:1fr;gap:24px}
   .cards,.pot,.videos{grid-template-columns:1fr}
   .band,.gal{grid-template-columns:repeat(2,1fr)}
@@ -159,13 +183,73 @@ footer{background:var(--ink);color:rgba(255,255,255,.6);text-align:center;paddin
 
 <section class="facts" id="kratko">
   <div class="wrap">
-    <div class="grid">
-      <div class="fact"><div class="num">~15.000</div><div class="lbl">m² <span class="sl">zemljišč</span><span class="en">of land</span></div></div>
-      <div class="fact"><div class="num">6</div><div class="lbl"><span class="sl">objektov (~413 m²)</span><span class="en">buildings (~413 m²)</span></div></div>
-      <div class="fact"><div class="num">8</div><div class="lbl"><span class="sl">parcel (3 zazidljive)</span><span class="en">plots (3 buildable)</span></div></div>
-      <div class="fact"><div class="num">30 min</div><div class="lbl"><span class="sl">od Ljubljane</span><span class="en">from Ljubljana</span></div></div>
-      <div class="fact"><div class="num">18.</div><div class="lbl"><span class="sl">stoletje (1824)</span><span class="en">century (1824)</span></div></div>
+    <!-- DODAJANJE TOČKE: skopiraj en blok <div class="stat">…</div>. Ikona = en <svg> (glej spodaj za nabor). -->
+    <div class="stats" id="stats">
+
+      <div class="stat">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M9 4 3 7v13l6-3 6 3 6-3V4l-6 3-6-3z"/><path d="M9 4v13M15 7v13"/></svg></div>
+        <div class="t"><span class="sl">15.000 m² zasebnega posestva</span><span class="en">15,000 m² of private estate</span></div>
+        <div class="s"><span class="sl">Ekskluzivna lokacija ob reki Krki na osmih parcelah</span><span class="en">An exclusive riverside location across eight plots</span></div>
+      </div>
+
+      <div class="stat">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V8l7-4 7 4v13"/><path d="M9 21v-5h6v5M9 11h.01M15 11h.01"/></svg></div>
+        <div class="t"><span class="sl">6 zgodovinskih objektov</span><span class="en">6 historic buildings</span></div>
+        <div class="s"><span class="sl">Skupaj približno <b>413 m²</b> obstoječih bruto površin</span><span class="en">Approx. <b>413 m²</b> of existing gross floor area in total</span></div>
+      </div>
+
+      <div class="stat">
+        <div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg></div>
+        <div class="t"><span class="sl">8 parcel z razvojnim potencialom</span><span class="en">8 plots with development potential</span></div>
+        <div class="s"><span class="sl">Med njimi <b>3 zazidljive</b> v območju centralnih dejavnosti (CD)</span><span class="en">Including <b>3 buildable</b> in the central-activities zone (CD)</span></div>
+      </div>
+
+      <div class="stat">
+        <div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+        <div class="t"><span class="sl">30 minut od Ljubljane</span><span class="en">30 minutes from Ljubljana</span></div>
+        <div class="s"><span class="sl">Le 36 km do ljubljanske obvoznice</span><span class="en">Just 36 km to the Ljubljana ring road</span></div>
+      </div>
+
+      <div class="stat">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M6 3h12M6 21h12"/><path d="M8 3v4l4 5 4-5V3"/><path d="M8 21v-4l4-5 4 5v4"/></svg></div>
+        <div class="t"><span class="sl">Skoraj 300 let zgodovine</span><span class="en">Almost 300 years of history</span></div>
+        <div class="s"><span class="sl">Jožmanov mlin izvira iz 18. stoletja</span><span class="en">The Jožman Mill dates back to the 18th century</span></div>
+      </div>
+
+      <div class="stat">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 21s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></div>
+        <div class="t"><span class="sl">Registriran objekt z naslovom</span><span class="en">A registered property with an address</span></div>
+        <div class="s"><span class="sl">Hišna številka <b>Drašča vas 26</b> je že evidentirana v registru</span><span class="en">House number <b>Drašča vas 26</b> is already on record</span></div>
+      </div>
+
+      <div class="stat">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M3 9c2 0 2.5-2 4.5-2s2.5 2 4.5 2 2.5-2 4.5-2 2.5 2 4 2"/><path d="M3 15c2 0 2.5-2 4.5-2s2.5 2 4.5 2 2.5-2 4.5-2 2.5 2 4 2"/></svg></div>
+        <div class="t"><span class="sl">Naravni slap in kopališče</span><span class="en">Natural waterfall and bathing spot</span></div>
+        <div class="s"><span class="sl">Eno najlepših kopališč na reki Krki neposredno ob posestvu</span><span class="en">One of the loveliest bathing spots on the Krka, right by the estate</span></div>
+      </div>
+
+      <div class="stat">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M2 17v-4a2 2 0 0 1 2-2h11a3 3 0 0 1 3 3v3"/><path d="M2 17h18M6 11V8h6v3"/><path d="M2 19v-3M20 19v-2"/></svg></div>
+        <div class="t"><span class="sl">Možnost butičnega turizma</span><span class="en">Potential for boutique tourism</span></div>
+        <div class="s"><span class="sl">Potrjena vizija razvoja v sodelovanju z ZVKDS</span><span class="en">A development vision confirmed with the Heritage Institute (ZVKDS)</span></div>
+      </div>
+
+      <div class="stat">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/></svg></div>
+        <div class="t"><span class="sl">Popolna zasebnost</span><span class="en">Complete privacy</span></div>
+        <div class="s"><span class="sl">Brez neposrednih sosedov, obdano z neokrnjeno naravo</span><span class="en">No direct neighbours, surrounded by unspoilt nature</span></div>
+      </div>
+
+      <div class="stat">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M6 3h12l3 5-9 13L3 8l3-5z"/><path d="M3 8h18M9 3 6 8l6 13M15 3l3 5-6 13"/></svg></div>
+        <div class="t"><span class="sl">Edinstvena investicijska priložnost</span><span class="en">A unique investment opportunity</span></div>
+        <div class="s"><span class="sl">Redka kombinacija kulturne dediščine, narave in razvojnega potenciala</span><span class="en">A rare blend of cultural heritage, nature and development potential</span></div>
+      </div>
+
     </div>
+    <button class="stats-arrow prev" aria-label="Prejšnje" onclick="statStep(-1)"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <button class="stats-arrow next" aria-label="Naslednje" onclick="statStep(1)"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+    <div class="stats-dots" id="statsDots"></div>
   </div>
 </section>
 
@@ -387,6 +471,58 @@ function lb(el){
 }
 function closeLb(){ document.getElementById('lightbox').style.display='none'; }
 document.addEventListener('keydown',function(e){ if(e.key==='Escape') closeLb(); });
+
+/* Statistike — adaptivni trak (carousel le ob preliv) */
+var statStep;
+(function(){
+  var facts=document.querySelector('.facts');
+  var track=document.getElementById('stats');
+  var dotsWrap=document.getElementById('statsDots');
+  if(!facts||!track) return;
+  var items=Array.prototype.slice.call(track.querySelectorAll('.stat'));
+  var timer=null;
+  function overflow(){ return track.scrollWidth - track.clientWidth > 4; }
+  function nearest(){
+    var c=track.scrollLeft + track.clientWidth/2, best=0, bd=1e9;
+    items.forEach(function(it,i){ var d=Math.abs((it.offsetLeft+it.offsetWidth/2)-c); if(d<bd){bd=d;best=i;} });
+    return best;
+  }
+  function go(i){
+    i=Math.max(0,Math.min(items.length-1,i));
+    var it=items[i];
+    track.scrollTo({left: it.offsetLeft-(track.clientWidth-it.offsetWidth)/2, behavior:'smooth'});
+  }
+  statStep=function(dir){
+    var i=nearest()+dir;
+    if(i>=items.length) i=0; if(i<0) i=items.length-1;
+    go(i);
+  };
+  function dots(){
+    dotsWrap.innerHTML='';
+    items.forEach(function(it,i){
+      var b=document.createElement('button');
+      b.addEventListener('click',function(){ go(i); });
+      dotsWrap.appendChild(b);
+    });
+  }
+  function markDots(){
+    var idx=nearest();
+    Array.prototype.forEach.call(dotsWrap.children,function(d,i){ d.classList.toggle('on',i===idx); });
+  }
+  function start(){ stop(); if(overflow()) timer=setInterval(function(){ statStep(1); },4500); }
+  function stop(){ if(timer){clearInterval(timer);timer=null;} }
+  function setup(){
+    if(overflow()){ facts.classList.add('is-carousel'); start(); }
+    else { facts.classList.remove('is-carousel'); stop(); }
+    markDots();
+  }
+  dots(); setup();
+  track.addEventListener('scroll',markDots,{passive:true});
+  facts.addEventListener('mouseenter',stop);
+  facts.addEventListener('mouseleave',function(){ if(facts.classList.contains('is-carousel')) start(); });
+  track.addEventListener('pointerdown',stop);
+  var rt; window.addEventListener('resize',function(){ clearTimeout(rt); rt=setTimeout(setup,200); });
+})();
 </script>
 </body>
 </html>
