@@ -145,6 +145,13 @@ section:nth-of-type(even) .pot .box{background:var(--paper)}
 .parcele-frame{aspect-ratio:1400/480;margin-top:18px}
 .objekti-frame{aspect-ratio:869/372;margin-top:18px}
 .kataster-frame{aspect-ratio:832/430;max-width:780px;margin:18px auto 6px}
+.zbadge{display:inline-flex;align-items:center;gap:6px;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;padding:4px 11px;border-radius:20px;line-height:1.4}
+.zbadge svg{width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.zbadge.build{background:rgba(90,110,79,.16);color:var(--green)}
+.zbadge.nobuild{background:rgba(138,117,89,.2);color:var(--stone-d)}
+.pgroups{display:flex;flex-direction:column;gap:16px;margin-top:16px}
+.pgroup{display:flex;flex-direction:column;gap:9px}
+.pgroup .parcele-list{margin:0}
 .parcele-list{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 4px}
 .pno{font-family:"Courier New",monospace;font-size:.88rem;font-weight:700;color:var(--river-d);
   background:#fff;border:1px solid var(--line);border-radius:6px;padding:5px 11px}
@@ -330,8 +337,19 @@ footer{background:var(--ink);color:rgba(255,255,255,.6);text-align:center;paddin
     <p class="lead"><span class="sl">Celotna posest meri cca. 15.000 m² in se razprostira na osmih parcelah, od katerih so 3 zazidljive oz. v območju centralnih dejavnosti (CD).</span><span class="en">The entire estate measures approx. 15,000 m² and spans eight plots, three of which are buildable (within the central-activities zone, CD).</span></p>
 
     <h3 class="subhead"><span class="sl">Zemljiške parcele <span style="color:var(--stone-d);font-weight:400">(prodaja v enem kosu)</span></span><span class="en">Land plots <span style="color:var(--stone-d);font-weight:400">(sold as one lot)</span></span></h3>
-    <div class="parcele-list">
-      <span class="pno">2661/1 (del)</span><span class="pno">2662 (del)</span><span class="pno">2663</span><span class="pno">3441</span><span class="pno">3442</span><span class="pno">2639</span><span class="pno">2640/5</span><span class="pno">2640/6</span>
+    <div class="pgroups">
+      <div class="pgroup">
+        <span class="zbadge build"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.5 2.5 4.5-5"/></svg><span class="sl">Zazidljivo — stavbno zemljišče (CD)</span><span class="en">Buildable — building land (CD)</span></span>
+        <div class="parcele-list">
+          <span class="pno">2663</span><span class="pno">3441</span><span class="pno">3442</span>
+        </div>
+      </div>
+      <div class="pgroup">
+        <span class="zbadge nobuild"><svg viewBox="0 0 24 24"><path d="M12 22V12M12 12c0-3 2-5 5-5 0 3-2 5-5 5zM12 13c0-3-2-5-5-5 0 3 2 5 5 5z"/></svg><span class="sl">Nezazidljivo — gozd in kmetijstvo (G, K2)</span><span class="en">Non-buildable — forest &amp; agricultural (G, K2)</span></span>
+        <div class="parcele-list">
+          <span class="pno">2661/1 (del)</span><span class="pno">2662 (del)</span><span class="pno">2639</span><span class="pno">2640/5</span><span class="pno">2640/6</span>
+        </div>
+      </div>
     </div>
 
     <a class="zoomable parcele-frame" data-full="./assets/img/Parcele_full.jpg" onclick="lb(this)">
@@ -344,11 +362,13 @@ footer{background:var(--ink);color:rgba(255,255,255,.6);text-align:center;paddin
 
     <div class="pot" style="margin-top:24px">
       <div class="box">
+        <span class="zbadge build" style="margin-bottom:9px"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.5 2.5 4.5-5"/></svg><span class="sl">Zazidljivo (CD)</span><span class="en">Buildable (CD)</span></span>
         <h3><span class="sl">Parcele 2663, 3441, 3442</span><span class="en">Plots 2663, 3441, 3442</span></h3>
         <p><span class="sl"><b>Stavbna zemljišča — druga območja centralnih dejavnosti (CD).</b> Dopustne rabe: turizem, gostinstvo, kulturne vsebine, storitve, interpretacijski centri in kulturne dejavnosti. Možna je gradnja novih objektov, rekonstrukcija obstoječih in sprememba namembnosti.</span><span class="en"><b>Building land — other central-activities areas (CD).</b> Permitted uses: tourism, hospitality, cultural content, services, interpretation centres and cultural activities. New construction, reconstruction of existing buildings and change of use are all possible.</span></p>
       </div>
-      <div class="box">
-        <h3><span class="sl">Parcele 2640/5, 2640/6, 2639, 2661/1 (del), 2662 (del)</span><span class="en">Plots 2640/5, 2640/6, 2639, 2661/1 (part), 2662 (part)</span></h3>
+      <div class="box" style="border-left-color:var(--stone)">
+        <span class="zbadge nobuild" style="margin-bottom:9px"><svg viewBox="0 0 24 24"><path d="M12 22V12M12 12c0-3 2-5 5-5 0 3-2 5-5 5zM12 13c0-3-2-5-5-5 0 3 2 5 5 5z"/></svg><span class="sl">Nezazidljivo</span><span class="en">Non-buildable</span></span>
+        <h3 style="color:var(--stone-d)"><span class="sl">Parcele 2640/5, 2640/6, 2639, 2661/1 (del), 2662 (del)</span><span class="en">Plots 2640/5, 2640/6, 2639, 2661/1 (part), 2662 (part)</span></h3>
         <p><span class="sl">Gozdna in kmetijska zemljišča — gozdna (G) in druga kmetijska (K2) zemljišča.</span><span class="en">Forest and agricultural land — forest (G) and other agricultural (K2) land.</span></p>
       </div>
     </div>
