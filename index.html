@@ -92,8 +92,22 @@ ul.clean li::before{content:"›";position:absolute;left:0;color:var(--river);fo
 .card{background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden;box-shadow:0 6px 22px rgba(0,0,0,.05)}
 section:nth-of-type(even) .card{background:var(--paper)}
 .card img{width:100%;height:210px;object-fit:cover;display:block}
+.cc{position:relative;height:210px;overflow:hidden}
+.cc img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .6s ease}
+.cc img.on{opacity:1}
+.cc-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:2;width:30px;height:30px;border:0;border-radius:50%;
+  background:rgba(0,0,0,.42);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;transition:.2s}
+.card:hover .cc-btn{opacity:1}
+.cc-btn:hover{background:rgba(0,0,0,.62)}
+.cc-btn.prev{left:8px}.cc-btn.next{right:8px}
+.cc-btn svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.cc-dots{position:absolute;bottom:9px;left:0;right:0;display:flex;justify-content:center;gap:6px;z-index:2}
+.cc-dots span{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.55);cursor:pointer;transition:.2s}
+.cc-dots span.on{background:#fff;width:16px;border-radius:3px}
+@media(max-width:860px){.cc-btn{opacity:.85}}
 .card .c-body{padding:18px 20px}
-.card .dim{display:inline-block;background:var(--stone);color:#fff;font-size:.74rem;font-weight:700;padding:3px 10px;border-radius:20px;margin-bottom:8px;letter-spacing:.5px}
+.card .dim{display:inline-block;background:var(--river);color:#fff;font-size:.78rem;font-weight:700;padding:4px 12px;border-radius:20px;margin-bottom:8px;letter-spacing:.3px}
+.card .dim-x{opacity:.72;font-weight:400;margin-left:4px}
 .card p{font-size:.93rem;margin-bottom:0;color:#56534b}
 
 .pot{display:grid;grid-template-columns:repeat(2,1fr);gap:26px;margin-top:30px}
@@ -335,7 +349,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.6);text-align:center;paddin
       <div class="card">
         <img src="./assets/img/Mlin_05.jpg" alt="Jožmanov mlin">
         <div class="c-body">
-          <span class="dim">126,75 m² · 19,5 × 6,5 m</span>
+          <span class="dim">126,75 m² <span class="dim-x">· 19,5 × 6,5 m</span></span>
           <h3><span class="sl">Jožmanov mlin (1)</span><span class="en">The Jožman Mill (1)</span></h3>
           <p><span class="sl">Stavba št. 455 na parceli 3442, evidentirana v registru prostorskih enot, z naslovom in hišno številko <b>Drašča vas 26</b>. Objekt je bil v preteklosti naseljen, kar olajša priklop na infrastrukturo (voda, elektrika, optika), prijavo bivališča ali turistične dejavnosti ter legalizacijo in spremembo namembnosti.</span><span class="en">Building no. 455 on plot 3442, recorded in the register of spatial units, with the address and house number <b>Drašča vas 26</b>. Once inhabited — which eases utility connections (water, electricity, fibre), registering residence or tourism activity, and legalisation or change of use.</span></p>
         </div>
@@ -343,15 +357,23 @@ footer{background:var(--ink);color:rgba(255,255,255,.6);text-align:center;paddin
       <div class="card">
         <img src="./assets/img/Hlev_mali_na_loki_01.jpg" alt="Kamniti objekt na loki / Stone building on the meadow">
         <div class="c-body">
-          <span class="dim">56 m² · 14 × 4 m</span>
+          <span class="dim">56 m² <span class="dim-x">· 14 × 4 m</span></span>
           <h3><span class="sl">Kamniti objekt na loki (2)</span><span class="en">Stone building on the meadow (2)</span></h3>
           <p><span class="sl">Verjetno nekdanji hlev ali gospodarski objekt, povezan s širšo rabo Jožmanovega mlina in kmetijskega posestva.</span><span class="en">Likely a former stable or farm building tied to the broader use of the Jožman Mill and the estate.</span></p>
         </div>
       </div>
       <div class="card">
-        <img src="./assets/img/Dvorisce_mlin_kozolec.kasca_01.jpg" alt="Kozolec, kamnita klet, kašča in skedenj / Hayrack, cellar, granary and barn">
+        <div class="cc">
+          <img class="on" src="./assets/img/niz/Kozolec.jpg" alt="Kozolec / Hayrack">
+          <img src="./assets/img/niz/Klet.jpg" alt="Kamnita klet / Stone cellar">
+          <img src="./assets/img/niz/Kasca.jpg" alt="Kašča / Granary">
+          <img src="./assets/img/niz/Skedenj.jpg" alt="Skedenj / Barn">
+          <button class="cc-btn prev" aria-label="Prejšnja slika"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+          <button class="cc-btn next" aria-label="Naslednja slika"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+          <div class="cc-dots"><span class="on"></span><span></span><span></span><span></span></div>
+        </div>
         <div class="c-body">
-          <span class="dim">231 m² · 38,5 × 6 m</span>
+          <span class="dim">231 m² <span class="dim-x">· 38,5 × 6 m</span></span>
           <h3><span class="sl">Kozolec (3), kamnita klet (4), kašča (5) in skedenj (6)</span><span class="en">Hayrack (3), stone cellar (4), granary (5) &amp; barn (6)</span></h3>
           <p><span class="sl">Nasproti mlina stoji niz gospodarskih objektov — kozolec, kamnita klet, kašča in skedenj — ki skupaj z atrijem med skednjem in kaščo merijo cca. 230 m² bruto površine.</span><span class="en">Opposite the mill stands a row of farm buildings — a hayrack, a stone cellar, a granary and a barn — which, together with the atrium between the barn and granary, measure approx. 230 m² of gross area.</span></p>
         </div>
@@ -531,6 +553,29 @@ function lb(el){
 }
 function closeLb(){ document.getElementById('lightbox').style.display='none'; }
 document.addEventListener('keydown',function(e){ if(e.key==='Escape') closeLb(); });
+
+/* Mini-carousel v kartici (.cc) — avto 5s, levo/desno, pike, poteg */
+document.querySelectorAll('.cc').forEach(function(cc){
+  var imgs=cc.querySelectorAll('img');
+  var dots=cc.querySelectorAll('.cc-dots span');
+  if(imgs.length<2) return;
+  var i=0,timer;
+  function show(n){ i=(n+imgs.length)%imgs.length;
+    imgs.forEach(function(im,k){ im.classList.toggle('on',k===i); });
+    dots.forEach(function(d,k){ d.classList.toggle('on',k===i); }); }
+  function next(){ show(i+1); } function prev(){ show(i-1); }
+  function start(){ stop(); timer=setInterval(next,5000); } function stop(){ clearInterval(timer); }
+  cc.querySelector('.cc-btn.next').addEventListener('click',function(e){ e.stopPropagation(); next(); start(); });
+  cc.querySelector('.cc-btn.prev').addEventListener('click',function(e){ e.stopPropagation(); prev(); start(); });
+  dots.forEach(function(d,k){ d.addEventListener('click',function(e){ e.stopPropagation(); show(k); start(); }); });
+  cc.addEventListener('mouseenter',stop);
+  cc.addEventListener('mouseleave',start);
+  var x0=null;
+  cc.addEventListener('touchstart',function(e){ x0=e.touches[0].clientX; },{passive:true});
+  cc.addEventListener('touchend',function(e){ if(x0===null) return; var dx=e.changedTouches[0].clientX-x0;
+    if(Math.abs(dx)>40){ dx<0?next():prev(); start(); } x0=null; });
+  show(0); start();
+});
 
 /* Statistike — adaptivni trak (carousel le ob preliv) */
 var statStep;
