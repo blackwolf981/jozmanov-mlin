@@ -317,10 +317,8 @@ a.contact-item:hover svg{stroke:#fff}
 </nav>
 
 <header class="hero">
-  <img class="bg" src="./assets/img/Mlin_01.jpg" alt="Jožmanov mlin">
-  <img class="bg" src="./assets/img/Slap_05.jpg" alt="" aria-hidden="true">
-  <img class="bg" src="./assets/img/Mlin_081115.jpg" alt="" aria-hidden="true">
-  <img class="bg" src="./assets/img/Loka_04.jpg" alt="" aria-hidden="true">
+  <img class="bg" alt="Jožmanov mlin">
+  <img class="bg" alt="" aria-hidden="true">
   <div class="inner">
     <div class="eyebrow" style="color:#fff;opacity:.9"><span class="sl">Na prodaj • Dolenjska, Slovenija</span><span class="en">For sale • Dolenjska, Slovenia</span></div>
     <h1><span class="sl">Zgodovinski Jožmanov mlin</span><span class="en">The Historic Jožman Mill</span></h1>
@@ -1084,19 +1082,28 @@ document.querySelectorAll('.pd-full').forEach(function(f){
   b.addEventListener('click',function(){ pdToggle(b); });
   w.appendChild(b); f.appendChild(w);
 });
-/* Hero: naključna prva slika + nežno prelivanje (Ken Burns je v CSS) */
+/* Hero: 15 naslovnih slik, naključen vrstni red, progresivno nalaganje + prelivanje */
 (function(){
-  var imgs=document.querySelectorAll('.hero img.bg');
-  if(!imgs.length) return;
-  var i=Math.floor(Math.random()*imgs.length);
-  imgs[i].classList.add('on');
-  if(imgs.length<2) return;
+  var base='./assets/img/hero/';
+  var list=['Mlin_081115.jpg','N_Loka_iz_slapa.jpg','N_dvorisce.jpg','N_iz_jame.jpg','N_loka_na_osredku.jpg','N_mlin_iz_osredka.jpg','N_mlin_nad_slapom.jpg','N_mlin_nad_slapom2.jpg','N_mlin_pod_slapom.jpg','N_mlin_pred_tomuno.jpg','N_nad_tomuno.jpg','N_pod_slapom.jpg','N_slap_iz_zapornice.jpg','N_slapinkrka.jpg','N_v_jamo.jpg'];
+  for(var k=list.length-1;k>0;k--){var j=Math.floor(Math.random()*(k+1));var t=list[k];list[k]=list[j];list[j]=t;}
+  var L=document.querySelectorAll('.hero img.bg');
+  if(!L.length) return;
+  L[0].src=base+list[0]; L[0].classList.add('on');
+  if(L.length<2) return;
   var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if(reduce) return;
+  function preload(n){ var im=new Image(); im.src=base+list[n%list.length]; }
+  preload(1);
+  var front=0, idx=0;
   setInterval(function(){
-    imgs[i].classList.remove('on');
-    i=(i+1)%imgs.length;
-    imgs[i].classList.add('on');
+    idx=(idx+1)%list.length;
+    var back=1-front;
+    L[back].src=base+list[idx];
+    L[back].classList.add('on');
+    L[front].classList.remove('on');
+    front=back;
+    preload(idx+1);
   },6500);
 })();
 </script>
