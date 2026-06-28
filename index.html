@@ -1085,8 +1085,11 @@ document.querySelectorAll('.pd-full').forEach(function(f){
 });
 /* Hero: 15 naslovnih slik, naključen vrstni red, progresivno nalaganje + prelivanje */
 (function(){
-  var base='./assets/img/hero/';
-  var list=['N_Loka_iz_slapa.jpg','N_dvorisce.jpg','N_loka_na_osredku.jpg','N_mlin_iz_osredka.jpg','N_mlin_nad_slapom.jpg','N_mlin_pod_slapom.jpg','N_nad_tomuno.jpg','N_pod_slapom.jpg','N_slap_iz_zapornice.jpg'];
+  var mobile = window.matchMedia && window.matchMedia('(max-width:860px)').matches;
+  var base = mobile ? './assets/img/hero-mobile/' : './assets/img/hero/';
+  var list = mobile
+    ? ['Dvorisce_mlin_kozolec.kasca_01.jpg','Jez_ob_mlinu_04.jpg','Kopalisce_pod_slapom_02.jpg','Mlin_14.jpg','Mlin_s_slapa.jpg','Mlin_zapornica.jpg','Polotok_ob_jezu_01.jpg','Slap_16.jpg']
+    : ['N_Loka_iz_slapa.jpg','N_dvorisce.jpg','N_loka_na_osredku.jpg','N_mlin_iz_osredka.jpg','N_mlin_nad_slapom.jpg','N_mlin_pod_slapom.jpg','N_nad_tomuno.jpg','N_pod_slapom.jpg','N_slap_iz_zapornice.jpg'];
   for(var k=list.length-1;k>0;k--){var j=Math.floor(Math.random()*(k+1));var t=list[k];list[k]=list[j];list[j]=t;}
   var L=document.querySelectorAll('.hero img.bg');
   if(!L.length) return;
