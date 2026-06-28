@@ -14,3 +14,6 @@ desktop.ini
 # Lokalna delovna kopija (ni za objavo)
 index_v2.html
 index - Copy.html
+
+# Izvorne slike (lokalno; na splet gredo le optimizirane v assets/img/)
+Slike/
