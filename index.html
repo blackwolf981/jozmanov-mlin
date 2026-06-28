@@ -1086,7 +1086,7 @@ document.querySelectorAll('.pd-full').forEach(function(f){
 /* Hero: 15 naslovnih slik, naključen vrstni red, progresivno nalaganje + prelivanje */
 (function(){
   var base='./assets/img/hero/';
-  var list=['Mlin_081115.jpg','N_Loka_iz_slapa.jpg','N_dvorisce.jpg','N_iz_jame.jpg','N_loka_na_osredku.jpg','N_mlin_iz_osredka.jpg','N_mlin_nad_slapom.jpg','N_mlin_nad_slapom2.jpg','N_mlin_pod_slapom.jpg','N_mlin_pred_tomuno.jpg','N_nad_tomuno.jpg','N_pod_slapom.jpg','N_slap_iz_zapornice.jpg','N_slapinkrka.jpg','N_v_jamo.jpg'];
+  var list=['N_Loka_iz_slapa.jpg','N_dvorisce.jpg','N_loka_na_osredku.jpg','N_mlin_iz_osredka.jpg','N_mlin_nad_slapom.jpg','N_mlin_pod_slapom.jpg','N_nad_tomuno.jpg','N_pod_slapom.jpg','N_slap_iz_zapornice.jpg'];
   for(var k=list.length-1;k>0;k--){var j=Math.floor(Math.random()*(k+1));var t=list[k];list[k]=list[j];list[j]=t;}
   var L=document.querySelectorAll('.hero img.bg');
   if(!L.length) return;
