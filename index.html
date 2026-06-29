@@ -150,9 +150,16 @@ section:nth-of-type(even) .pot .box{background:var(--paper)}
 .gal-btn.ghost{background:transparent;color:var(--river-d);border:1.5px solid var(--river-d)}
 .gal-btn.ghost:hover{background:var(--river-d);color:#fff}
 .gal-full .gal-btn.ghost{display:flex;margin-left:auto;margin-right:auto}
-.gal-scroller{max-height:74vh;overflow-y:auto;overflow-x:hidden;margin-top:18px;padding-right:6px;
+.gal-collapsed[hidden],.gal-full[hidden]{display:none}
+.gal-label{font:600 .8rem/1 'Inter',sans-serif;letter-spacing:.13em;text-transform:uppercase;color:var(--stone-d);margin:24px 0 10px}
+.gal-scroller{max-height:74vh;overflow-y:auto;overflow-x:hidden;margin-top:10px;padding-right:6px;
   border-radius:8px;-webkit-overflow-scrolling:touch}
-.gal-scroller .gal{margin-top:0;grid-template-columns:repeat(5,1fr)}
+.gal-scroller .gal,.gal-scroller .galv{margin-top:0;display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.g-vid{position:relative}
+.g-vid .play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:50px;height:50px;border-radius:50%;
+  background:rgba(0,0,0,.55);display:flex;align-items:center;justify-content:center;pointer-events:none;transition:.2s}
+.g-vid:hover .play{background:rgba(0,0,0,.75)}
+.g-vid .play svg{width:20px;height:20px;fill:#fff;margin-left:3px}
 
 /* Klikabilni izrez (thumbnail) z CTA prekrivom */
 .zoomable{position:relative;display:block;width:100%;border-radius:8px;overflow:hidden;cursor:zoom-in;
@@ -219,6 +226,7 @@ section:nth-of-type(even) .pot .box{background:var(--paper)}
 
 #lightbox{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:100;display:none;align-items:center;justify-content:center;cursor:zoom-out}
 #lightbox img{max-width:92%;max-height:90%;border-radius:4px;box-shadow:0 0 60px rgba(0,0,0,.6)}
+#lightbox video.lb-video{max-width:92%;max-height:90%;border-radius:4px;box-shadow:0 0 60px rgba(0,0,0,.6);background:#000;display:none}
 #lightbox .lb-close{position:absolute;top:18px;right:22px;width:46px;height:46px;border:0;border-radius:50%;
   background:rgba(255,255,255,.14);color:#fff;font-size:1.7rem;line-height:1;cursor:pointer;
   display:flex;align-items:center;justify-content:center;transition:.2s}
@@ -248,8 +256,8 @@ footer{background:var(--ink);color:rgba(255,255,255,.6);text-align:center;paddin
   .gal-preview{grid-template-columns:repeat(2,1fr)}
   /* Mobile: vodoravni swipe trak namesto navpičnega scrollerja */
   .gal-scroller{max-height:none;overflow-y:hidden;overflow-x:auto;scroll-snap-type:x mandatory;padding:2px 0 10px}
-  .gal-scroller .gal{display:flex;gap:10px;grid-template-columns:none}
-  .gal-scroller .gal .g-item{flex:0 0 68%;scroll-snap-align:center}
+  .gal-scroller .gal,.gal-scroller .galv{display:flex;gap:10px;grid-template-columns:none}
+  .gal-scroller .gal .g-item,.gal-scroller .galv .g-item{flex:0 0 68%;scroll-snap-align:center}
   .band .tall{grid-row:span 1;height:200px}
   section{padding:54px 0}
   .map-frame{aspect-ratio:1/1}
@@ -914,14 +922,16 @@ a.contact-item:hover svg{stroke:#fff}
 
     <!-- Polna galerija: videa + foto scroller -->
     <div class="gal-full" hidden>
-    <div class="videos" style="margin-bottom:20px">
-      <video class="vert" controls preload="none" poster="./assets/video/reka_vert_poster.jpg">
-        <source src="./assets/video/reka_vert.mp4" type="video/mp4">
-      </video>
-      <video class="vert" controls preload="none" poster="./assets/video/slap_vertikalno_poster.jpg">
-        <source src="./assets/video/slap_vertikalno.mp4" type="video/mp4">
-      </video>
+
+    <h3 class="gal-label"><span class="sl">Videi</span><span class="en">Videos</span></h3>
+    <div class="gal-scroller">
+    <div class="galv">
+      <figure class="g-item g-vid" onclick="lbVid(this)" data-video="./assets/video/reka_vert.mp4"><img loading="lazy" src="./assets/video/reka_vert_poster.jpg" alt="Video: reka in jez"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></figure>
+      <figure class="g-item g-vid" onclick="lbVid(this)" data-video="./assets/video/slap_vertikalno.mp4"><img loading="lazy" src="./assets/video/slap_vertikalno_poster.jpg" alt="Video: slap"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></figure>
     </div>
+    </div>
+
+    <h3 class="gal-label"><span class="sl">Slike</span><span class="en">Photos</span></h3>
     <div class="gal-scroller">
     <div class="gal">
       <figure class="g-item" onclick="lb(this)" data-full="./assets/img/galerija/full/DolPot_P_01.jpg"><img loading="lazy" src="./assets/img/galerija/thumb/DolPot_P_01.jpg" alt="Dolinska pot"></figure>
@@ -1016,6 +1026,7 @@ a.contact-item:hover svg{stroke:#fff}
   <button class="lb-nav lb-prev" aria-label="Prejšnja" onclick="event.stopPropagation();lbStep(-1)">&#8249;</button>
   <button class="lb-nav lb-next" aria-label="Naslednja" onclick="event.stopPropagation();lbStep(1)">&#8250;</button>
   <img src="" alt="">
+  <video class="lb-video" controls playsinline onclick="event.stopPropagation()"></video>
 </div>
 
 <script>
@@ -1028,31 +1039,60 @@ var nav=document.getElementById('nav');
 window.addEventListener('scroll',function(){
   nav.classList.toggle('scrolled',window.scrollY>60);
 });
-var lbList=[], lbIdx=0;
+var lbList=[], lbIdx=0, lbType='img';
 function galFullList(){
   return Array.prototype.slice.call(document.querySelectorAll('#galerija .gal .g-item'))
     .map(function(g){ return g.getAttribute('data-full') || g.querySelector('img').getAttribute('src'); });
 }
+function lbShow(){
+  var box=document.getElementById('lightbox');
+  var img=box.querySelector('img'), vid=box.querySelector('.lb-video');
+  box.classList.toggle('single', lbList.length<2);
+  if(lbType==='video'){
+    img.style.display='none';
+    vid.style.display='block';
+    vid.src=lbList[lbIdx];
+    vid.play().catch(function(){});
+  } else {
+    vid.pause(); vid.removeAttribute('src'); vid.load(); vid.style.display='none';
+    img.style.display='block';
+    img.src=lbList[lbIdx];
+  }
+}
 function lb(el){
   var box=document.getElementById('lightbox');
+  lbType='img';
   var full=el.getAttribute('data-full');
   if(!full){ var im=el.tagName==='IMG'?el:el.querySelector('img'); full=im?im.getAttribute('src'):''; }
   if(el.closest && el.closest('#galerija')){
     lbList=galFullList();
     lbIdx=lbList.indexOf(full); if(lbIdx<0) lbIdx=0;
-    box.classList.remove('single');
   } else {
-    lbList=[full]; lbIdx=0; box.classList.add('single');
+    lbList=[full]; lbIdx=0;
   }
-  box.querySelector('img').src=lbList[lbIdx];
+  lbShow();
+  box.style.display='flex';
+}
+function lbVid(el){
+  var box=document.getElementById('lightbox');
+  lbType='video';
+  lbList=Array.prototype.slice.call(document.querySelectorAll('#galerija .galv .g-vid'))
+    .map(function(v){ return v.getAttribute('data-video'); });
+  lbIdx=lbList.indexOf(el.getAttribute('data-video')); if(lbIdx<0) lbIdx=0;
+  lbShow();
   box.style.display='flex';
 }
 function lbStep(n){
   if(lbList.length<2) return;
   lbIdx=(lbIdx+n+lbList.length)%lbList.length;
-  document.getElementById('lightbox').querySelector('img').src=lbList[lbIdx];
+  lbShow();
 }
-function closeLb(){ document.getElementById('lightbox').style.display='none'; }
+function closeLb(){
+  var box=document.getElementById('lightbox');
+  var vid=box.querySelector('.lb-video');
+  if(vid){ vid.pause(); }
+  box.style.display='none';
+}
 document.addEventListener('keydown',function(e){
   if(document.getElementById('lightbox').style.display!=='flex') return;
   if(e.key==='Escape') closeLb();
