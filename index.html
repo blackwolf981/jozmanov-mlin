@@ -1175,10 +1175,23 @@ function toggleGal(){
 
 /* Razširljive kartice razvojnega potenciala — neodvisni toggle */
 function toggleRC(el){
-  var wasOpen=el.classList.contains('open');
   var sec=el.closest('section')||document;
-  sec.querySelectorAll('.rcard.open').forEach(function(c){ c.classList.remove('open'); });
-  if(!wasOpen) el.classList.add('open');
+  /* Mobile (≤860px): ena kartica naenkrat (stara logika) */
+  if(window.matchMedia('(max-width:860px)').matches){
+    var wasOpen=el.classList.contains('open');
+    sec.querySelectorAll('.rcard.open').forEach(function(c){ c.classList.remove('open'); });
+    if(!wasOpen) el.classList.add('open');
+    return;
+  }
+  /* Desktop: kartice v isti vrstici so lahko vse odprte; klik v drugi vrstici zapre prejšnjo.
+     Vrstico določimo po vrhu kartice (getBoundingClientRect().top). Najprej vse izmerimo, šele nato spreminjamo. */
+  var myTop=el.getBoundingClientRect().top;
+  var toClose=[];
+  sec.querySelectorAll('.rcard.open').forEach(function(c){
+    if(c!==el && Math.abs(c.getBoundingClientRect().top-myTop)>4) toClose.push(c);
+  });
+  toClose.forEach(function(c){ c.classList.remove('open'); });
+  el.classList.toggle('open');
 }
 
 /* Progressive Disclosure toggle — zamenjava povzetek ↔ celotna vsebina (modularno, brez knjižnic) */
