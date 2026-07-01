@@ -934,8 +934,8 @@ a.contact-item:hover svg{stroke:#fff}
     <h3 class="gal-label"><span class="sl">Videi</span><span class="en">Videos</span></h3>
     <div class="gal-scroller">
     <div class="galv">
-      <figure class="g-item g-vid" onclick="lbVid(this)" data-video="./assets/video/reka_vert.mp4"><img loading="lazy" src="./assets/video/reka_vert_poster.jpg" alt="Video: reka in jez"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></figure>
-      <figure class="g-item g-vid" onclick="lbVid(this)" data-video="./assets/video/slap_vertikalno.mp4"><img loading="lazy" src="./assets/video/slap_vertikalno_poster.jpg" alt="Video: slap"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></figure>
+      <figure class="g-item g-vid" onclick="lbVid(this)" data-video="./assets/video/Video_podslapom_P_01.mp4"><img loading="lazy" src="./assets/video/Video_podslapom_P_01_poster.jpg" alt="Video: pod slapom"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></figure>
+      <figure class="g-item g-vid" onclick="lbVid(this)" data-video="./assets/video/Video_zapornice_P_01.mp4"><img loading="lazy" src="./assets/video/Video_zapornice_P_01_poster.jpg" alt="Video: zapornice"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></figure>
     </div>
     </div>
 
@@ -984,6 +984,12 @@ a.contact-item:hover svg{stroke:#fff}
 <figure class="g-item" onclick="lb(this)" data-full="./assets/img/galerija/full/Zapornice_P_03.jpg"><img loading="lazy" src="./assets/img/galerija/thumb/Zapornice_P_03.jpg" alt="Zapornice"></figure>
 <figure class="g-item" onclick="lb(this)" data-full="./assets/img/galerija/full/Znotraj_P_01.jpg"><img loading="lazy" src="./assets/img/galerija/thumb/Znotraj_P_01.jpg" alt="Notranjost mlina 01"></figure>
 <figure class="g-item" onclick="lb(this)" data-full="./assets/img/galerija/full/Znotraj_P_02.jpg"><img loading="lazy" src="./assets/img/galerija/thumb/Znotraj_P_02.jpg" alt="Notranjost mlina 02"></figure>
+<figure class="g-item" onclick="lb(this)" data-full="./assets/img/galerija/full/Mlin_slapdol_P_01.jpg"><img loading="lazy" src="./assets/img/galerija/thumb/Mlin_slapdol_P_01.jpg" alt="Mlin s pogledom na slap"></figure>
+<figure class="g-item" onclick="lb(this)" data-full="./assets/img/galerija/full/Mosticek_P_02.jpg"><img loading="lazy" src="./assets/img/galerija/thumb/Mosticek_P_02.jpg" alt="Mostiček čez jez 02"></figure>
+<figure class="g-item" onclick="lb(this)" data-full="./assets/img/galerija/full/Slap_dol_P_04.jpg"><img loading="lazy" src="./assets/img/galerija/thumb/Slap_dol_P_04.jpg" alt="Slap, pogled dol 04"></figure>
+<figure class="g-item" onclick="lb(this)" data-full="./assets/img/galerija/full/Slap_gor_P_05.jpg"><img loading="lazy" src="./assets/img/galerija/thumb/Slap_gor_P_05.jpg" alt="Slap, pogled gor 05"></figure>
+<figure class="g-item" onclick="lb(this)" data-full="./assets/img/galerija/full/Slap_gor_P_06.jpg"><img loading="lazy" src="./assets/img/galerija/thumb/Slap_gor_P_06.jpg" alt="Slap, pogled gor 06"></figure>
+<figure class="g-item" onclick="lb(this)" data-full="./assets/img/galerija/full/Slap_gor_P_07.jpg"><img loading="lazy" src="./assets/img/galerija/thumb/Slap_gor_P_07.jpg" alt="Slap, pogled gor 07"></figure>
     </div>
     </div>
     <button class="gal-btn ghost" onclick="toggleGal(this)"><span class="sl">Skrij galerijo</span><span class="en">Hide gallery</span></button>
@@ -1058,38 +1064,44 @@ var galObjekti=[
   {f:'./assets/img/objekti/full/Kasca.jpg', sl:'Kašča', en:'Granary'},
   {f:'./assets/img/objekti/full/Skedenj.jpg', sl:'Skedenj', en:'Barn'}
 ];
-function galFullList(){
-  return Array.prototype.slice.call(document.querySelectorAll('#galerija .gal .g-item'))
-    .map(function(g){ return g.getAttribute('data-full') || g.querySelector('img').getAttribute('src'); });
+/* Skupni seznam galerije: NAJPREJ videi, nato vse slike (isti vrstni red povsod).
+   Vsak element = {src, type} → lightbox kroži čez foto IN video, neskončno. */
+function galCombinedList(){
+  var vids=Array.prototype.slice.call(document.querySelectorAll('#galerija .galv .g-vid'))
+    .map(function(v){ return {src:v.getAttribute('data-video'), type:'video'}; });
+  var imgs=Array.prototype.slice.call(document.querySelectorAll('#galerija .gal .g-item'))
+    .map(function(g){ return {src:(g.getAttribute('data-full')||g.querySelector('img').getAttribute('src')), type:'img'}; });
+  return vids.concat(imgs);
 }
 function lbShow(){
   var box=document.getElementById('lightbox');
   var img=box.querySelector('img'), vid=box.querySelector('.lb-video');
   box.classList.toggle('single', lbList.length<2);
-  if(lbType==='video'){
+  var it=lbList[lbIdx]||{};
+  if(it.type==='video'){
     img.style.display='none';
     vid.style.display='block';
-    vid.src=lbList[lbIdx];
+    vid.src=it.src;
     vid.play().catch(function(){});
   } else {
     vid.pause(); vid.removeAttribute('src'); vid.load(); vid.style.display='none';
     img.style.display='block';
-    img.src=lbList[lbIdx];
+    img.src=it.src;
   }
   var cap=box.querySelector('.lb-cap'), c=lbCaps[lbIdx];
   if(c){ cap.querySelector('.sl').textContent=c.sl; cap.querySelector('.en').textContent=c.en; cap.style.display='block'; }
   else { cap.style.display='none'; }
 }
+function lbFind(list, src){ for(var i=0;i<list.length;i++){ if(list[i].src===src) return i; } return 0; }
 function lb(el){
   var box=document.getElementById('lightbox');
-  lbType='img';
   var full=el.getAttribute('data-full');
   if(!full){ var im=el.tagName==='IMG'?el:el.querySelector('img'); full=im?im.getAttribute('src'):''; }
   if(el.closest && el.closest('#galerija')){
-    lbList=galFullList();
-    lbIdx=lbList.indexOf(full); if(lbIdx<0) lbIdx=0;
+    lbList=galCombinedList();
+    lbIdx=lbFind(lbList, full);
   } else {
-    lbList=[full]; lbIdx=0;
+    lbList=[{src:full, type:'img'}]; lbIdx=0;
   }
   lbCaps=lbList.map(function(){return null;});
   lbShow();
@@ -1097,18 +1109,15 @@ function lb(el){
 }
 function lbVid(el){
   var box=document.getElementById('lightbox');
-  lbType='video';
-  lbList=Array.prototype.slice.call(document.querySelectorAll('#galerija .galv .g-vid'))
-    .map(function(v){ return v.getAttribute('data-video'); });
-  lbIdx=lbList.indexOf(el.getAttribute('data-video')); if(lbIdx<0) lbIdx=0;
+  lbList=galCombinedList();
+  lbIdx=lbFind(lbList, el.getAttribute('data-video'));
   lbCaps=lbList.map(function(){return null;});
   lbShow();
   box.style.display='flex';
 }
 function lbObj(idx){
   var box=document.getElementById('lightbox');
-  lbType='img';
-  lbList=galObjekti.map(function(o){ return o.f; });
+  lbList=galObjekti.map(function(o){ return {src:o.f, type:'img'}; });
   lbCaps=galObjekti.map(function(o){ return {sl:o.sl, en:o.en}; });
   lbIdx=(idx>=0&&idx<lbList.length)?idx:0;
   lbShow();
@@ -1147,20 +1156,31 @@ document.addEventListener('keydown',function(e){
   if(!sec) return;
   var prev=sec.querySelector('.gal-preview');
   var items=Array.prototype.slice.call(sec.querySelectorAll('.gal .g-item'));
+  var vids=Array.prototype.slice.call(sec.querySelectorAll('.galv .g-vid'));
   function shuffle(a){ for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;} return a; }
   window.renderGalPreview=function(){
     if(!prev) return;
-    var pick=shuffle(items.slice()).slice(0,6);
     prev.innerHTML='';
-    pick.forEach(function(g){
+    /* Prva 2 = videa (fiksno), naslednji 4 = naključne slike */
+    var chosen=vids.slice(0,2).concat(shuffle(items.slice()).slice(0,4));
+    chosen.forEach(function(g){
+      var isVid=g.classList.contains('g-vid');
       var fig=document.createElement('figure');
-      fig.className='g-prev';
-      fig.setAttribute('data-full', g.getAttribute('data-full'));
-      fig.setAttribute('onclick','lb(this)');
+      fig.className='g-prev'+(isVid?' g-vid':'');
       var img=g.querySelector('img');
       var i=document.createElement('img');
       i.loading='lazy'; i.src=img.getAttribute('src'); i.alt=img.getAttribute('alt')||'';
       fig.appendChild(i);
+      if(isVid){
+        fig.setAttribute('data-video', g.getAttribute('data-video'));
+        fig.setAttribute('onclick','lbVid(this)');
+        var pl=document.createElement('span'); pl.className='play';
+        pl.innerHTML='<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>';
+        fig.appendChild(pl);
+      } else {
+        fig.setAttribute('data-full', g.getAttribute('data-full'));
+        fig.setAttribute('onclick','lb(this)');
+      }
       prev.appendChild(fig);
     });
   };
@@ -1305,7 +1325,7 @@ document.querySelectorAll('.pd-full').forEach(function(f){
   var mobile = window.matchMedia && window.matchMedia('(max-width:860px)').matches;
   var base = mobile ? './assets/img/hero-mobile/' : './assets/img/hero/';
   var list = mobile
-    ? ['Dvorisce_P_01.jpg','Jez_gor_P_02.jpg','Mlin_spredaj_P_01.jpg','Mlin_spredaj_P_02.jpg','Mlin_z_Mosticka_P_01.jpg','Mlin_zadaj_P_02.jpg','Osredek_gor_P_03.jpg','Slap_dol_P_02.jpg','Slap_gor_P_01.jpg','Stopnice_zadaj_P_01.jpg','Zapornice_P_03.jpg','Znotraj_P_01.jpg']
+    ? ['Dvorisce_P_01.jpg','Jez_gor_P_02.jpg','Mlin_slapdol_P_01.jpg','Mlin_spredaj_P_01.jpg','Mlin_spredaj_P_02.jpg','Mlin_z_Mosticka_P_01.jpg','Mlin_zadaj_P_02.jpg','Osredek_gor_P_03.jpg','Slap_dol_P_02.jpg','Slap_gor_P_01.jpg','Slap_gor_P_07.jpg','Stopnice_zadaj_P_01.jpg','Zapornice_P_03.jpg','Znotraj_P_01.jpg']
     : ['N_Loka_iz_slapa.jpg','N_dvorisce.jpg','N_loka_na_osredku.jpg','N_mlin_iz_osredka.jpg','N_mlin_nad_slapom.jpg','N_mlin_pod_slapom.jpg','N_nad_tomuno.jpg','N_pod_slapom.jpg','N_slap_iz_zapornice.jpg'];
   for(var k=list.length-1;k>0;k--){var j=Math.floor(Math.random()*(k+1));var t=list[k];list[k]=list[j];list[j]=t;}
   var L=document.querySelectorAll('.hero img.bg');
